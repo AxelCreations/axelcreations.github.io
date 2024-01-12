@@ -2,8 +2,8 @@ import Container from '../Container';
 
 const Skills = () => {
   return (
-    <section>
-      <Container className='bg-secondary'>
+    <section className='bg-secondary'>
+      <Container>
         <h2>Technical Skills</h2>
       </Container>
     </section>
