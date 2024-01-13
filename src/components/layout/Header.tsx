@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logo from '../../ReynelAxel.svg';
+import logo from '../../img/ReynelAxel.svg';
 import Container from '../Container';
 
 const Header = () => {
@@ -25,6 +25,7 @@ const StyledHeader = styled.header`
   align-items: center;
   display: flex;
   height: 100px;
+  background-color: #202020;
 
   @media screen and (max-width: 768px) {
     height: 80px;

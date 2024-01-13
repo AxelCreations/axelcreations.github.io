@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logo from '../../ReynelAxel.svg';
+import logo from '../../img/reynelaxel-logo.webp';
 import Container from '../Container';
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
     <StyledFooter className="App-header bg-secondary">
       <StyledContainer>
         <div className="logo">
-          <img src={logo} height={55} width={125} alt='Reynel Axel Name' />
+          <img src={logo} height={110} width={110} alt='Reynel Axel Logo' />
         </div>
       </StyledContainer>
     </StyledFooter>
@@ -24,9 +24,9 @@ const StyledContainer = styled(Container)`
 const StyledFooter = styled.footer`
   align-items: center;
   display: flex;
-  height: 100px;
+  height: 150px;
 
   @media screen and (max-width: 768px) {
-    height: 80px;
+    height: 120px;
   }
 `
