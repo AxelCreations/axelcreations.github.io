@@ -19,7 +19,7 @@ export default Header;
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
-`
+`;
 
 const StyledHeader = styled.header`
   align-items: center;
@@ -30,4 +30,4 @@ const StyledHeader = styled.header`
   @media screen and (max-width: 768px) {
     height: 80px;
   }
-`
+`;
