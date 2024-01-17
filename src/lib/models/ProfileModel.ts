@@ -1,6 +1,6 @@
 type ProfileGoals = {
-  title: string;
-  description: string;
+  title: string | null;
+  descriptions: string[];
 }
 
 type ProfileModel = {
