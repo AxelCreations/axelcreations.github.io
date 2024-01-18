@@ -5,7 +5,7 @@ import gitHubIcon from '../../img/contacts/github.svg';
 import gmailIcon from '../../img/contacts/gmail.svg';
 import xIcon from '../../img/contacts/x.svg';
 
-export const ContactsData: ContactModel[] = [
+const ContactsData: ContactModel[] = [
   {
     icon: linkedInIcon,
     text: 'LinkedIn',
@@ -27,3 +27,5 @@ export const ContactsData: ContactModel[] = [
     link: 'https://twitter.com/ReynelAxel/',
   },
 ];
+
+export default ContactsData;

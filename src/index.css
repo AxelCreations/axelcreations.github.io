@@ -1,3 +1,11 @@
+:root {
+  --bg-main: #313640;
+  --bg-secondary: #20242C;
+  --color-white: white;
+  --color-white-smoke: #B2B2B2;
+  --color-black: black;
+}
+
 .bg-principal {
   background-color: #313640;
 }
