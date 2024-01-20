@@ -23,6 +23,7 @@ const StyledSection = styled.section`
   padding: 2rem 0;
 
   @media screen and (max-width: 768px) {
+    padding-bottom: 0;
     padding-top: 0;
   }
 `;

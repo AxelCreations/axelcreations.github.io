@@ -19,7 +19,8 @@ export default Container;
 
 const Wrapper = styled.div`
 	&.full-width {
-		padding: 0 24px;
+		padding-left: 24px;
+		padding-right: 24px;
 		padding-left: calc((100% - 1440px) / 2);
 		width: 100vw;
 		
@@ -36,7 +37,8 @@ const Wrapper = styled.div`
 		}
 
 		@media screen and (max-width: 768px) {
-			padding: 0 16px;
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 	}
 
@@ -46,7 +48,8 @@ const Wrapper = styled.div`
 		width: 100%;
 
 		@media screen and (max-width: 1440px) {
-			padding: 0 24px;
+			padding-left: 24px;
+			padding-right: 24px;
 		}
 
 		@media screen and (max-width: 1350px) {
@@ -59,7 +62,8 @@ const Wrapper = styled.div`
 
 		@media screen and (max-width: 992px) {
 			max-width: 768px;
-			padding: 0 16px;
+			padding-left: 16px;
+			padding-right: 16px;
 		}
 	}
 `;

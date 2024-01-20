@@ -1,24 +1,27 @@
 import styled from 'styled-components';
 import Container from '../../components/Container';
+import WorkTimeline from '../../components/WorkTimeline';
 
-const MyWork = () => {
+const WorkExperience = () => {
   return (
-    <section>
+    <section className='bg-secondary'>
       <StyledContainer>
-        <h2>Some Of My Work</h2>
+        <h2>My Working Experience</h2>
+
+        <WorkTimeline />
       </StyledContainer>
     </section>
   )
 }
 
-export default MyWork;
+export default WorkExperience;
 
 const StyledContainer = styled(Container)`
   padding-bottom: 4rem;
   padding-top: 4rem;
+
+  h2 {
+    margin-bottom: 2rem;
+  }`
   
-  @media screen and (max-width: 768px) {
-    padding-bottom: 3rem;
-    padding-top: 3rem;
-  }
-`;
+;
