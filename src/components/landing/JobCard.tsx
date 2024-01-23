@@ -8,7 +8,7 @@ type JobCardProps = {
   experience: ExperienceModel;
 }
 
-const JobCard = ({ experience }: JobCardProps) => {
+const JobCard = ({ experience }: JobCardProps): JSX.Element => {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceModel | null>(null);
   
   useEffect(() => {
@@ -27,7 +27,7 @@ const JobCard = ({ experience }: JobCardProps) => {
       </div>
       <div className="job-details">
         <div className="job-details-icon">
-          <img src={experience.icon} alt={experience.company} />
+          <img src={experience.icon} title={experience.company} alt={experience.company} />
         </div>
         <div className="job-details-time">{experience.initialDate} - {experience.endDate}</div>
       </div>

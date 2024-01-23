@@ -1,10 +1,10 @@
 import ProfileModel from '../models/ProfileModel';
 
 import educationIcon from '../../img/profile/education.svg';
-import languageIcon from '../../img/profile/github.svg';
-import skillsIcon from '../../img/profile/gmail.svg';
+import languageIcon from '../../img/profile/language.svg';
+import skillsIcon from '../../img/profile/list.svg';
 
-export const ProfileData: ProfileModel[] = [
+const ProfileData: ProfileModel[] = [
   {
     icon: educationIcon,
     title: 'Education',
@@ -55,3 +55,5 @@ export const ProfileData: ProfileModel[] = [
     ],
   },
 ];
+
+export default ProfileData;

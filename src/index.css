@@ -1,6 +1,7 @@
 :root {
   --bg-main: #313640;
   --bg-secondary: #20242C;
+  --bg-secondary-40: rgba(32, 36, 44, 0.4);
   --color-white: white;
   --color-white-smoke: #B2B2B2;
   --color-black: black;

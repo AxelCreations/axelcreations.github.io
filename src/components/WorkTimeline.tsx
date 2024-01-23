@@ -6,7 +6,7 @@ import ArrowLeftIcon from '../img/arrow-left.svg';
 import Button from './global/Button';
 import { HorizontalScroll } from '../lib/HorizontalScroll';
 
-const WorkTimeline = () => {
+const WorkTimeline = (): JSX.Element => {
   return (
     <Wrapper>
       <StyledTimeline id="timeline-container">
