@@ -45,7 +45,7 @@ type SkillDataProps = {
   skills: SkillModel[];
 }
 
-export const SkillsData: SkillDataProps[] = [
+const SkillsData: SkillDataProps[] = [
   {
     category: 'Software Development',
     skills: [
@@ -267,3 +267,5 @@ export const SkillsData: SkillDataProps[] = [
     ]
   },
 ];
+
+export default SkillsData;

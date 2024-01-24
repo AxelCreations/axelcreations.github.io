@@ -12,13 +12,13 @@ const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
       <div className="profile-content">
         {
           profile.goals.map((goal, idx) => (
-            <div className="goal">
+            <div className="goal" key={idx}>
               {goal.title?.length && <h4 className="goal-title">{goal.title}</h4>}
               <div className="goal-descriptions">
                 {goal.title?.length ?
-                  (goal.descriptions.map(description => <p dangerouslySetInnerHTML={{ __html: description }}></p>))
+                  (goal.descriptions.map((description, idx) => <p dangerouslySetInnerHTML={{ __html: description }} key={idx}></p>))
                   :
-                  (goal.descriptions.map(description => <li>{description}</li>))
+                  (goal.descriptions.map((description, idx) => <li key={idx}>{description}</li>))
                 }
               </div>
             </div>

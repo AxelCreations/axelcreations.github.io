@@ -1,8 +1,8 @@
 export enum SkillLevel {
-  Beginner,
-  Advanced,
-  Experienced,
-  Expert
+  Beginner = 1,
+  Advanced = 2,
+  Experienced = 3,
+  Expert = 4
 }
 
 type SkillModel = {
