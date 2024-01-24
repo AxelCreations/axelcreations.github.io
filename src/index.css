@@ -1,7 +1,10 @@
 :root {
   --bg-main: #313640;
+  --bg-main-50: rgba(49, 54, 64, 0.5);
   --bg-secondary: #20242C;
   --bg-secondary-40: rgba(32, 36, 44, 0.4);
+  --bg-secondary-50: rgba(32, 36, 44, 0.5);
+  --bg-secondary-80: rgba(32, 36, 44, 0.8);
   --color-white: white;
   --color-white-smoke: #B2B2B2;
   --color-black: black;
@@ -39,6 +42,10 @@ body {
   background-color: #313640;
   color: white;
   font-size: 16px;
+
+}
+body.no-scroll {
+  overflow: hidden;
 }
 
 code {

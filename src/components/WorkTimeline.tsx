@@ -5,14 +5,27 @@ import ExperienceData from '../lib/data/Experience';
 import ArrowLeftIcon from '../img/arrow-left.svg';
 import Button from './global/Button';
 import { HorizontalScroll } from '../lib/HorizontalScroll';
+import ExperienceModal from './ExperienceModal';
+import { useEffect, useState } from 'react';
+import ExperienceModel from '@/lib/models/ExperienceModel';
 
 const WorkTimeline = (): JSX.Element => {
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceModel|null>(null);
+
+  useEffect(() => {
+    if ( !!selectedExperience ) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [selectedExperience]);
+
   return (
     <Wrapper>
       <StyledTimeline id="timeline-container">
         {
           ExperienceData.map((experience, index) =>
-            <JobCard experience={experience} key={index} />
+            <JobCard experience={experience} key={index} changeSelectedExperience={setSelectedExperience} />
           )
         }
       </StyledTimeline>
@@ -26,6 +39,8 @@ const WorkTimeline = (): JSX.Element => {
           <img src={ArrowLeftIcon} alt='control arrow right' />
         </StyledButton>
       </StyledControlsContainer>
+
+      <ExperienceModal selectedExperience={selectedExperience} changeSelectedExperience={setSelectedExperience} />
     </Wrapper>
   )
 }
@@ -46,7 +61,7 @@ const StyledTimeline = styled.div`
   overflow-x: auto;
   padding-bottom: 2rem;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: x mandatory;
 
   &::-webkit-scrollbar {
     display: none;

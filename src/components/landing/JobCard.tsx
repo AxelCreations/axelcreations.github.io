@@ -1,19 +1,14 @@
-import ExperienceModel from "../../lib/models/ExperienceModel";
-import styled from "styled-components";
-import Button from "../global/Button";
-import { useEffect, useState } from "react";
-import ExperienceModal from "./ExperienceModal";
+import ExperienceModel from '../../lib/models/ExperienceModel';
+import styled from 'styled-components';
+import Button from '../global/Button';
+import { Dispatch, SetStateAction } from 'react';
 
 type JobCardProps = {
   experience: ExperienceModel;
+  changeSelectedExperience: Dispatch<SetStateAction<ExperienceModel | null>>;
 }
 
-const JobCard = ({ experience }: JobCardProps): JSX.Element => {
-  const [selectedExperience, setSelectedExperience] = useState<ExperienceModel | null>(null);
-  
-  useEffect(() => {
-
-  }, [selectedExperience]);
+const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): JSX.Element => {
 
   return (
     <StyledJob className="job">
@@ -21,7 +16,7 @@ const JobCard = ({ experience }: JobCardProps): JSX.Element => {
         <h3 className="job-content-title">{experience.title}</h3>
         <h4 className="job-content-company">{experience.company}</h4>
         <p className="job-content-details">{experience.excerpt}</p>
-        <StyledButton onClick={() => {setSelectedExperience(experience)}}>
+        <StyledButton onClick={() => {changeSelectedExperience(experience)}}>
           <span>More...</span>
         </StyledButton>
       </div>
@@ -99,6 +94,10 @@ const StyledJob = styled.div`
         letter-spacing: 0.05rem;
         line-height: 115%;
         text-align: justify;
+
+        @media screen and (max-width: 578px) {
+          font-size: 0.95rem;
+        }
       }
     }
 
