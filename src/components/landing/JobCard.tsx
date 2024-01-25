@@ -41,6 +41,8 @@ const StyledJob = styled.div`
   width: 432px;
 
   @media screen and (max-width: 578px) {
+    min-height: 265px;
+    height: auto;
     min-width: 100%;
     width: 100%;
   }
@@ -74,6 +76,8 @@ const StyledJob = styled.div`
       z-index: 0;
 
       @media screen and (max-width: 578px) {
+        min-height: 184px;
+        height: auto;
         margin-left: 0;
       }
 
@@ -164,12 +168,13 @@ const StyledJob = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  background-color: none;
+  display: block;
+  padding: 0.25rem 0;
   color: white;
   font-size: 1rem;
   padding: 0;
   font-weight: 700;
   text-align: right;
-  float: right;
+  width: 100%;
 `;
 

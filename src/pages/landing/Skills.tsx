@@ -59,6 +59,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
 
     &-title {
       h3 {
@@ -75,6 +76,25 @@ const Wrapper = styled.div`
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
+
+      @media screen and (max-width: 992px) {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem 0;
+        align-items: center;
+
+        .skill {
+          margin: 0 auto;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media screen and (max-width: 578px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 `;
