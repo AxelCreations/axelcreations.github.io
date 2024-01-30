@@ -55,6 +55,15 @@ const StyledJob = styled.div`
       .job-details {
         align-items: flex-start;
       }
+
+      .job-content {
+        &::after {
+          top: -45px;
+          left: -5px;
+          transform: rotate(180deg);
+          bottom: unset;
+        }
+      }
     }
   }
 
@@ -71,14 +80,30 @@ const StyledJob = styled.div`
       border: 5px solid var(--bg-main);
       height: 184px;
       margin-left: 26px;
-      position: relative;
       padding: 1rem;
-      z-index: 0;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        border-bottom: 20px solid transparent;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-top: 20px solid var(--bg-main);
+        bottom: -45px;
+        display: block;
+        left: -6px;
+        position: absolute;
+
+        @media screen and (max-width: 578px) {
+          left: 8px;
+        }
+      }
 
       @media screen and (max-width: 578px) {
-        min-height: 184px;
         height: auto;
         margin-left: 0;
+        min-height: 184px;
       }
 
       &-title {
@@ -106,23 +131,24 @@ const StyledJob = styled.div`
     }
 
     &-details {
-      flex-grow: 1;
-      display: flex;
-      position: relative;
       align-items: flex-end;
+      display: flex;
+      flex-grow: 1;
+      position: relative;
       z-index: 0;
 
       @media screen and (max-width: 578px) {
         align-items: center;
         gap: 16px;
+        flex-grow: 0;
       }
 
       &::before {
         content: '';
-        display: block;
-        position: absolute;
-        height: 1px;
         background-color: var(--color-white);
+        display: block;
+        height: 1px;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
         width: 100%;
@@ -133,13 +159,13 @@ const StyledJob = styled.div`
       }
 
       &-icon {
+        align-items: center;
+        background-color: var(--bg-secondary);
         border-radius: 50%;
         border: 1px solid var(--color-white);
-        background-color: var(--bg-secondary);
         display: flex;
-        justify-content: center;
-        align-items: center;
         height: 80px;
+        justify-content: center;
         overflow: hidden;
         position: relative;
         width: 80px;
@@ -150,11 +176,11 @@ const StyledJob = styled.div`
         }
 
         img {
-          object-position: center center;
-          object-fit: contain;
+          height: 100%;
           max-height: 60px;
           max-width: 60px;
-          height: 100%;
+          object-fit: contain;
+          object-position: center center;
           width: 100%;
         }
       }
@@ -168,13 +194,12 @@ const StyledJob = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  display: block;
-  padding: 0.25rem 0;
   color: white;
+  display: block;
   font-size: 1rem;
-  padding: 0;
   font-weight: 700;
+  padding: 0.25rem 0;
+  padding: 0;
   text-align: right;
   width: 100%;
 `;
-
