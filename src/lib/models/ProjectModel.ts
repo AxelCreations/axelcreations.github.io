@@ -4,6 +4,7 @@ type ProjectModel = {
   title: string;
   company: string;
   description: string;
+  excerpt: string;
   date: string;
   link: string | null;
   repo: string | null;

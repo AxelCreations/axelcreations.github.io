@@ -32,11 +32,11 @@ export default Skills;
 
 const StyledContainer = styled(Container)`
   padding-bottom: 4rem;
-  padding-top: 4rem;
+  padding-top: 8rem;
   
   @media screen and (max-width: 768px) {
     padding-bottom: 3rem;
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 `;
 

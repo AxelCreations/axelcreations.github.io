@@ -6,7 +6,7 @@ import WorkExperience from './pages/landing/WorkExperience';
 import Hero from './pages/landing/Hero';
 import Profile from './pages/landing/Profile';
 import Skills from './pages/landing/Skills';
-import MyWork from './pages/landing/Works';
+import MyWork from './pages/landing/MyWork';
 
 const App = () => {
   document.title = 'Reynel Axel Perdomo';

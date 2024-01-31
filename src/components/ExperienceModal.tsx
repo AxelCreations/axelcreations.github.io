@@ -55,6 +55,7 @@ const Modal = styled.div`
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 999;
 
   .modal {
     background-color: var(--bg-secondary-80);
@@ -129,9 +130,15 @@ const Modal = styled.div`
       display: flex;
       gap: 1rem;
       justify-content: center;
+      position: relative;
 
       span {
         font-weight: 700;
+        min-width: 90px;
+
+        &:first-of-type {
+          text-align: right;
+        }
       }
     }
   }
