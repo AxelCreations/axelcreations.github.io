@@ -17,7 +17,7 @@ const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: Exper
           <div className="modal">
             <div className="modal-close">
               <Button onClick={() => {changeSelectedExperience(null)}}>
-                <img src={closeIcon} title={`close-button`} alt={`close-button`} height={40} />
+                <img src={closeIcon} title={`close-button`} alt={`close-button icon`} height={40} />
               </Button>
             </div>
             <div className="modal-title">
@@ -29,7 +29,7 @@ const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: Exper
             </div>
             <div className="modal-footer">
               <span>{selectedExperience.initialDate}</span>
-              <img src={selectedExperience.icon} title={selectedExperience.company} alt={selectedExperience.company} height={40} />
+              <img src={selectedExperience.icon} title={selectedExperience.company} alt={`${selectedExperience.company} icon`} height={40} />
               <span>{selectedExperience.endDate}</span>
             </div>
           </div>

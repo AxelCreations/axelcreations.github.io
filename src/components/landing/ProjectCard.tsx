@@ -42,13 +42,13 @@ const ProjectCard = ({ project, carouselId }: ProjectCardProps) => {
           <div className="row">
             {project.link?.length &&
               <a href={project.link} title={`${project.title} site`} target="_blank" rel="noreferrer">
-                <img src={LinkIcon} alt={project.title} height={24} />
+                <img src={LinkIcon} alt={`${project.title} site icon`} height={24} />
               </a>
             }
 
             {project.repo?.length &&
               <a href={project.repo} title={`${project.title} repo`} target="_blank" rel="noreferrer">
-                <img src={RepoIcon} alt={project.title} height={24} />
+                <img src={RepoIcon} alt={`${project.title} repo icon`} height={24} />
               </a>
             }
           </div>
@@ -222,7 +222,7 @@ const Wrapper = styled.div`
       p {
         font-size: 1rem;
         line-height: 125%;
-        margin-top: 1.5rem;
+        margin: 1rem 0;
       }
 
       button {

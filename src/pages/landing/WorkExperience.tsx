@@ -6,7 +6,8 @@ const WorkExperience = () => {
   return (
     <section className='bg-secondary'>
       <StyledContainer>
-        <h2>My Working Experience</h2>
+        <h2>Work Experience Expedition</h2>
+        <p>Navigating Professional Evolution</p>
 
         <WorkTimeline />
       </StyledContainer>
@@ -25,8 +26,19 @@ const StyledContainer = styled(Container)`
     padding-top: 5rem;
   }
 
-  h2 {
-    margin-bottom: 2rem;
-  }`
+  > p {
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 578px) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
   
-;
+
+`;

@@ -9,7 +9,7 @@ const SkillCard = ({ skill }: SkillCardProps) => {
   return (
     <StyledSkill className="skill">
       <div className="skill-icon">
-        <img src={skill.icon} title={skill.title} alt={skill.title} height={50} />
+        <img src={skill.icon} title={skill.title} alt={`${skill.title} icon`} height={50} />
       </div>
       <div className="skill-level">
         <span className={`skill-level-bar level-${skill.level}`}></span>

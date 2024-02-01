@@ -30,7 +30,7 @@ const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
         }
       </div>
       <div className="profile-icon">
-        <img src={profile.icon} title={profile.title} alt={profile.title} height={42} />
+        <img src={profile.icon} title={`Profile ${profile.title}`} alt={`${profile.title} icon`} height={42} />
       </div>
     </StyledProfile>
   )
@@ -49,8 +49,9 @@ const StyledProfile = styled.div`
   &:hover {
     background-color: var(--bg-secondary);
   }
-
+  
   @media screen and (max-width: 992px) {
+    background-color: var(--bg-secondary);
     max-width: 400px;
     width: 100%;
   }

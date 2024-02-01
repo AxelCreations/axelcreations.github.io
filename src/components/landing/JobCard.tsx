@@ -22,7 +22,7 @@ const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): JSX.El
       </div>
       <div className="job-details">
         <div className="job-details-icon">
-          <img src={experience.icon} title={experience.company} alt={experience.company} />
+          <img src={experience.icon} title={experience.company} alt={`${experience.company} icon`} />
         </div>
         <div className="job-details-time">{experience.initialDate} - {experience.endDate}</div>
       </div>
@@ -122,7 +122,8 @@ const StyledJob = styled.div`
         font-weight: 400;
         letter-spacing: 0.05rem;
         line-height: 115%;
-        text-align: justify;
+        text-align: left;
+        margin: 1rem 0;
 
         @media screen and (max-width: 578px) {
           font-size: 0.95rem;

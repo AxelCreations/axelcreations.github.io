@@ -14,7 +14,7 @@ const Hero = () => {
             A Dominican Developer who loves programming, web design and problem solving.
           </p>
           <p className='content-description'>
-            With more than 12 years of experience in the Banking Sector, more than 7 years as a freelancer Full-Stack developer using technologies like C#, EF, Dotnet, Blazor, MVC, HTML/CSS/JS, Bootstrap and 3 years of experience as a Senior Web Developer using WordPress and touching a little bit of Laravel and ReactJS.
+            With more than 12 years of experience in the Banking Sector, more than 7 years as a freelancer Full-Stack developer, I've mastered technologies like C#, EF, Dotnet, Blazor, MVC, HTML/CSS/JS, and Bootstrap. With 3 years as a Senior Web Developer specializing in WordPress, while also delving into Laravel and ReactJS.
           </p>
         </div>
         <div className="image">
@@ -80,6 +80,11 @@ const StyledContainer = styled(Container)`
     &-description {
       margin-top: 0;
       max-width: 750px;
+      margin-bottom: 1.5rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
 
       @media screen and (max-width: 1350px) {
         max-width: 100%;

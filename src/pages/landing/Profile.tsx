@@ -8,6 +8,7 @@ const Profile = () => {
     <section>
       <StyledContainer>
         <h2>Professional Profile</h2>
+        <p>Qualifications & Attributes</p>
 
         <Wrapper>
           {
@@ -44,5 +45,17 @@ const StyledContainer = styled(Container)`
   @media screen and (max-width: 768px) {
     padding-bottom: 3rem;
     padding-top: 5rem;
+  }
+
+  > p {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 578px) {
+      font-size: 1rem;
+    }
   }
 `;
