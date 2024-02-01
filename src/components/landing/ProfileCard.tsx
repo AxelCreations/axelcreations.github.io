@@ -6,6 +6,7 @@ type ProfileCardProps = {
 }
 
 const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
+  
   return (
     <StyledProfile className='profile'>
       <h3 className="profile-title">{profile.title}</h3>
@@ -14,13 +15,16 @@ const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
           profile.goals.map((goal, idx) => (
             <div className="goal" key={idx}>
               {goal.title?.length && <h4 className="goal-title">{goal.title}</h4>}
-              <div className="goal-descriptions">
+              
                 {goal.title?.length ?
-                  (goal.descriptions.map((description, idx) => <p dangerouslySetInnerHTML={{ __html: description }} key={idx}></p>))
+                  (<div className="goal-descriptions">
+                    {goal.descriptions.map((description, idx) => <p dangerouslySetInnerHTML={{ __html: description }} key={idx}></p>)}
+                  </div>) 
                   :
-                  (goal.descriptions.map((description, idx) => <li key={idx}>{description}</li>))
+                  (<ul className="goal-descriptions">
+                      {goal.descriptions.map((description, idx) => <li key={idx}>{description}</li>)}
+                  </ul>)
                 }
-              </div>
             </div>
           ))
         }
@@ -75,6 +79,11 @@ const StyledProfile = styled.div`
         }
 
         p {
+          margin: 0;
+        }
+
+        ul {
+          padding-left: 1rem;
           margin: 0;
         }
 

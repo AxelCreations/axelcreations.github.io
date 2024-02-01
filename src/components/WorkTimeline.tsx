@@ -7,7 +7,7 @@ import Button from './global/Button';
 import { HorizontalScroll } from '../lib/HorizontalScroll';
 import ExperienceModal from './ExperienceModal';
 import { useEffect, useState } from 'react';
-import ExperienceModel from '@/lib/models/ExperienceModel';
+import ExperienceModel from '../lib/models/ExperienceModel';
 
 const WorkTimeline = (): JSX.Element => {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceModel|null>(null);

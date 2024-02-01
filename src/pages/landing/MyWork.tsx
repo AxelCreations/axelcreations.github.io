@@ -13,7 +13,7 @@ const MyWork = () => {
         <Wrapper>
           {
             ProjectsData
-              .map((project, idx) => <ProjectCard project={project} key={idx} />)
+              .map((project, idx) => <ProjectCard project={project} carouselId={idx} key={idx} />)
               .reverse()
           }
         </Wrapper>
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   padding: 5rem 0;
   
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1360px) {
     grid-template-columns: repeat(2, 1fr);
   }
   
