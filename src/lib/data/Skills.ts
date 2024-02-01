@@ -160,6 +160,16 @@ const SkillsData: SkillDataProps[] = [
         level: SkillLevel.Experienced
       },
       {
+        icon: jqueryIcon,
+        title: 'jQuery',
+        level: SkillLevel.Expert
+      },
+      {
+        icon: bootstrapIcon,
+        title: 'Bootstrap',
+        level: SkillLevel.Expert
+      },
+      {
         icon: gitIcon,
         title: 'Git',
         level: SkillLevel.Experienced
@@ -173,16 +183,6 @@ const SkillsData: SkillDataProps[] = [
         icon: gitlabIcon,
         title: 'GitLab',
         level: SkillLevel.Experienced
-      },
-      {
-        icon: jqueryIcon,
-        title: 'jQuery',
-        level: SkillLevel.Expert
-      },
-      {
-        icon: bootstrapIcon,
-        title: 'Bootstrap',
-        level: SkillLevel.Expert
       },
     ]
   },
@@ -212,7 +212,7 @@ const SkillsData: SkillDataProps[] = [
       {
         icon: projectIcon,
         title: 'Project',
-        level: SkillLevel.Beginner
+        level: SkillLevel.Experienced
       },
       {
         icon: visioIcon,

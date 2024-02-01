@@ -1,10 +1,23 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 
 import ProjectsData from '../../lib/data/Project';
+import ProjectModel from '../../lib/models/ProjectModel';
 import ProjectCard from '../../components/landing/ProjectCard';
+import ProjectModal from '../../components/ProjectModal';
 
-const MyWork = () => {
+const MyWork = (): JSX.Element => {
+  const [selectedProject, setSelectedProject] = useState<ProjectModel|null>(null);
+
+  useEffect(() => {
+    if ( !!selectedProject ) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [selectedProject]);
+
   return (
     <section>
       <StyledContainer>
@@ -14,11 +27,12 @@ const MyWork = () => {
         <Wrapper>
           {
             ProjectsData
-              .map((project, idx) => <ProjectCard project={project} carouselId={idx} key={idx} />)
+              .map((project, idx) => <ProjectCard project={project} carouselId={idx} key={idx} changeSelectedProject={setSelectedProject} />)
               .reverse()
           }
         </Wrapper>
       </StyledContainer>
+      <ProjectModal selectedProject={selectedProject} changeSelectedProject={setSelectedProject} />
     </section>
   )
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import JobCard from './landing/JobCard';
 import ExperienceData from '../lib/data/Experience';
@@ -6,7 +7,6 @@ import ArrowLeftIcon from '../img/arrow-left.svg';
 import Button from './global/Button';
 import { HorizontalScroll } from '../lib/HorizontalScroll';
 import ExperienceModal from './ExperienceModal';
-import { useEffect, useState } from 'react';
 import ExperienceModel from '../lib/models/ExperienceModel';
 
 const WorkTimeline = (): JSX.Element => {

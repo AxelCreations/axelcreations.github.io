@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import ProjectModel from "../../lib/models/ProjectModel";
 import styled from 'styled-components';
 import Button from "../global/Button";
@@ -10,9 +11,10 @@ import RepoIcon from '../../img/repo.svg';
 type ProjectCardProps = {
   project: ProjectModel;
   carouselId: number;
+  changeSelectedProject: Dispatch<SetStateAction<ProjectModel | null>>;
 }
 
-const ProjectCard = ({ project, carouselId }: ProjectCardProps) => {
+const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCardProps) => {
   return (
     <Wrapper className='project'>
       <div className="project-header">
@@ -38,7 +40,7 @@ const ProjectCard = ({ project, carouselId }: ProjectCardProps) => {
         <div className="project-content-company">{project.company}</div>
         <p className="project-content-excerpt">{project.excerpt}</p>
         <div className="project-content-links">
-          <Button><span>More...</span></Button>
+          <Button onClick={() => {changeSelectedProject(project)}}><span>More...</span></Button>
           <div className="row">
             {project.link?.length &&
               <a href={project.link} title={`${project.title} site`} target="_blank" rel="noreferrer">
@@ -47,7 +49,7 @@ const ProjectCard = ({ project, carouselId }: ProjectCardProps) => {
             }
 
             {project.repo?.length &&
-              <a href={project.repo} title={`${project.title} repo`} target="_blank" rel="noreferrer">
+              <a href={project.repo} title={`${project.title} repo (Request access)`} target="_blank" rel="noreferrer">
                 <img src={RepoIcon} alt={`${project.title} repo icon`} height={24} />
               </a>
             }

@@ -1,6 +1,7 @@
 import ProjectModel from '../models/ProjectModel';
 
 import { GetProjectImageList } from '../../lib/ProjectImagesList';
+import { GetSkillListByName } from '../../lib/SkillList';
 
 const ProjectsData: ProjectModel[] = [
   {
@@ -11,8 +12,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'December 2019',
     link: null,
     repo: null,
-    images: GetProjectImageList({projectName: 'airtm', count: 2}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'airtm', count: 2 }),
+    skills: GetSkillListByName({ names: ['c#', 'sql'] }),
   },
   {
     title: 'TuMontura',
@@ -22,8 +23,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'January 2020',
     link: null,
     repo: 'https://gitlab.com/AxelCreations/tumontura',
-    images: GetProjectImageList({projectName: 'tumontura', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'tumontura', count: 5 }),
+    skills: GetSkillListByName({ names: ['C#', 'SASS', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'dotnet', 'Entity Framework', 'MVC', 'SQL Server', 'jQuery', 'Bootstrap', 'Git', 'GitLab', 'Windows Server'] }),
   },
   {
     title: 'TeraIncome',
@@ -33,8 +34,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'July 2020',
     link: null,
     repo: 'https://gitlab.com/AxelCreations/teraincome',
-    images: GetProjectImageList({projectName: 'tera', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'tera', count: 5 }),
+    skills: GetSkillListByName({ names: ['C#', 'SASS', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'dotnet', 'Entity Framework', 'MVC', 'SQL Server', 'jQuery', 'Bootstrap', 'Git', 'GitLab', 'Excel', 'Windows Server'] }),
   },
   {
     title: 'Repair Tracking',
@@ -44,8 +45,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'February 2021',
     link: null,
     repo: 'https://gitlab.com/AxelCreations/repairtracking',
-    images: GetProjectImageList({projectName: 'repair', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'repair', count: 5 }),
+    skills: GetSkillListByName({ names: ['C#', 'SASS', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'dotnet', 'Entity Framework', 'MVC', 'MySQL', 'jQuery', 'Bootstrap', 'Git', 'GitLab', 'Excel', 'Windows Server'] }),
   },
   {
     title: 'ConcordiaCredito',
@@ -55,8 +56,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'October 2021',
     link: 'https://concordiacredito.com/',
     repo: 'https://gitlab.com/AxelCreations/concordiacredito',
-    images: GetProjectImageList({projectName: 'cc', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'cc', count: 5 }),
+    skills: GetSkillListByName({ names: ['C#', 'SASS', 'SQL', 'HTML5', 'CSS3', 'JavaScript', 'dotnet', 'Entity Framework', 'MVC', 'SQL Server', 'jQuery', 'Bootstrap', 'Git', 'GitLab', 'Excel', 'Windows Server'] }),
   },
   {
     title: 'BSpoke Studios',
@@ -66,8 +67,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'June 2022',
     link: 'https://bspokestudios.com/',
     repo: null,
-    images: GetProjectImageList({projectName: 'bspoke', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'bspoke', count: 5 }),
+    skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'WordPress', 'jQuery', 'Bootstrap', 'Git', 'GitHub'] }),
   },
   {
     title: 'LongeviQuest',
@@ -77,8 +78,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'November 2022',
     link: 'https://longeviquest.com/',
     repo: null,
-    images: GetProjectImageList({projectName: 'longevi', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'longevi', count: 5 }),
+    skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'WordPress', 'jQuery', 'Bootstrap', 'Git', 'GitHub'] }),
   },
   {
     title: 'BeautyBooks',
@@ -88,8 +89,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'April 2023',
     link: 'https://beautybooks.io/',
     repo: null,
-    images: GetProjectImageList({projectName: 'beauty', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'beauty', count: 5 }),
+    skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'WordPress', 'jQuery', 'Git', 'GitHub'] }),
   },
   {
     title: 'LashAssociation',
@@ -99,8 +100,8 @@ const ProjectsData: ProjectModel[] = [
     date: 'November 2023',
     link: 'https://americanlashassociation.org/',
     repo: null,
-    images: GetProjectImageList({projectName: 'lash', count: 5}),
-    skills: [],
+    images: GetProjectImageList({ projectName: 'lash', count: 5 }),
+    skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'WordPress', 'Git', 'GitHub'] }),
   },
 ];
 

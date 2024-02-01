@@ -1,37 +1,35 @@
 import { Dispatch, SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
+
 import styled from 'styled-components';
-import ExperienceModel from '../lib/models/ExperienceModel';
+import ProjectModel from '../lib/models/ProjectModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
 
-type ExperienceModalProps = {
-  selectedExperience: ExperienceModel | null;
-  changeSelectedExperience: Dispatch<SetStateAction<ExperienceModel | null>>;
+type ProjectModalProps = {
+  selectedProject: ProjectModel | null;
+  changeSelectedProject: Dispatch<SetStateAction<ProjectModel | null>>;
 }
 
-const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: ExperienceModalProps) => {
+const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalProps) => {
   return (
     <>
-      { selectedExperience &&  createPortal(
+      { selectedProject &&  createPortal(
         <Modal>
           <div className="modal">
             <div className="modal-close">
-              <Button onClick={() => {changeSelectedExperience(null)}}>
+              <Button onClick={() => {changeSelectedProject(null)}}>
                 <img src={closeIcon} title={`close-button`} alt={`close-button icon`} height={40} />
               </Button>
             </div>
             <div className="modal-title">
-              <h4>{selectedExperience.title}</h4>
-              <h5>{selectedExperience.company}</h5>
+              <h4>{selectedProject.title}</h4>
+              <h5>{selectedProject.company}</h5>
             </div>
             <div className="modal-content">
-              <p>{selectedExperience.description}</p>
+              <p>{selectedProject.description}</p>
             </div>
             <div className="modal-footer">
-              <span>{selectedExperience.initialDate}</span>
-              <img src={selectedExperience.icon} title={selectedExperience.company} alt={`${selectedExperience.company} icon`} height={40} />
-              <span>{selectedExperience.endDate}</span>
             </div>
           </div>
         </Modal>
@@ -41,7 +39,7 @@ const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: Exper
   )
 }
 
-export default ExperienceModal;
+export default ProjectModal;
 
 const Modal = styled.div`
   align-items: center;
@@ -66,7 +64,6 @@ const Modal = styled.div`
     padding: 4rem;
     position: relative;
     width: 100%;
-    z-index: 1;
 
     &::before {
       content: '';
