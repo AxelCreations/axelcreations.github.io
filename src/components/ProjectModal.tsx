@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import ProjectModel from '../lib/models/ProjectModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
-import SkillCard from './landing/SkillCard';
 
 type ProjectModalProps = {
   selectedProject: ProjectModel | null;
@@ -17,6 +16,11 @@ const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalPr
   
   useEffect(() => {
     setSelectedImage(selectedProject?.images[0] ?? '');
+    if ( !!selectedProject ) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   }, [selectedProject]);
 
   return (
