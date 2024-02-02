@@ -1,0 +1,79 @@
+:root {
+  --bg-main: #313640;
+  --bg-main-50: rgba(49, 54, 64, 0.5);
+  --bg-secondary: #20242C;
+  --bg-secondary-40: rgba(32, 36, 44, 0.4);
+  --bg-secondary-50: rgba(32, 36, 44, 0.5);
+  --bg-secondary-80: rgba(32, 36, 44, 0.8);
+  --color-white: white;
+  --color-white-smoke: #B2B2B2;
+  --color-black: black;
+}
+
+.bg-principal {
+  background-color: #313640;
+}
+
+.bg-secondary {
+  background-color: #20242C;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-white-smoke {
+  color: #B2B2B2;
+}
+
+.text-black {
+  color: black;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #313640;
+  color: white;
+  font-size: 16px;
+
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
