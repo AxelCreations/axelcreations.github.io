@@ -78,6 +78,7 @@ const Wrapper = styled.div`
       h3 {
         font-size: 2rem;
         font-weight: 700;
+        text-align: center;
   
         @media screen and (max-width: 578px) {
           font-size: 1.5rem;
@@ -89,10 +90,9 @@ const Wrapper = styled.div`
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
+      justify-content: center;
 
       @media screen and (max-width: 992px) {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
         gap: 1rem 0;
         align-items: center;
 

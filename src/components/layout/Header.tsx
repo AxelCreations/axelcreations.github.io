@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logo from '../../img/ReynelAxel.svg';
+import pdfIcon from '../../img/pdf.svg';
 import Container from '../Container';
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
     <StyledHeader className="App-header">
       <StyledContainer>
         <div className="logo">
-          <img src={logo} height={55} width={125} alt='Reynel Axel Name' />
+          <img src={logo} height={75} width={130} alt='Reynel Axel Name' />
         </div>
       </StyledContainer>
     </StyledHeader>
@@ -25,7 +26,7 @@ const StyledHeader = styled.header`
   align-items: center;
   display: flex;
   height: 100px;
-  background-color: #202020;
+  background-color: #181a1c;
 
   @media screen and (max-width: 768px) {
     height: 80px;
