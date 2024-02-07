@@ -8,7 +8,7 @@ type ContactProps = {
 
 const ContactCard = ({ contact }: ContactProps) => {
   return (
-    <StyledDiv href={contact.link} target="_blank">
+    <StyledDiv href={contact.link} target="_blank" title={contact.text}>
       <div className="icon">
         <Img src={contact.icon} text={`Contact ${contact.text}`} height={32} showPlaceholder={false} />
       </div>
@@ -23,18 +23,18 @@ export default ContactCard;
 
 const StyledDiv = styled.a`
   align-items: center;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-main);
   color: var(--color-black);
   display: flex;
-  border-radius: 24px;
+  border-radius: 14px;
   gap: 1rem;
   padding: 1rem 0;
-  border: 6px solid var(--color-black);
+  border: 1px solid var(--bg-secondary);
   justify-content: center;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.225);
   text-decoration: none;
   
   &:hover {
-  background-color: var(--color-white-smoke);
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.125);
     color: var(--color-black);
   }
@@ -52,19 +52,21 @@ const StyledDiv = styled.a`
     }
 
     img {
-      max-height: 32px;
-      max-width: 32px;
+      height: 50px;
+      width: 50px;
+      max-height: 50px;
+      max-width: 50px;
     
       @media screen and (max-width: 1200px) {
-        height: 28px;
-        width: 28px;
+        height: 45px;
+        width: 45px;
       }
     }
   }
 
   .text {
     span {
-      font-size: 2.125rem;
+      font-size: 2rem;
       font-weight: 700;
     
       @media screen and (max-width: 1200px) {
