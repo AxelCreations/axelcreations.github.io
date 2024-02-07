@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ExperienceModel from '../lib/models/ExperienceModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
+import Img from './global/Img';
 
 type ExperienceModalProps = {
   selectedExperience: ExperienceModel | null;
@@ -13,12 +14,12 @@ type ExperienceModalProps = {
 const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: ExperienceModalProps) => {
   return (
     <>
-      { selectedExperience &&  createPortal(
+      { selectedExperience && createPortal(
         <Modal>
           <div className="modal">
             <div className="modal-close">
               <Button onClick={() => {changeSelectedExperience(null)}}>
-                <img src={closeIcon} title={`close-button`} alt={`close-button icon`} height={40} />
+                <Img src={closeIcon} text={'close-button'} height={40} showPlaceholder={false} />
               </Button>
             </div>
             <div className="modal-title">
@@ -30,7 +31,7 @@ const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: Exper
             </div>
             <div className="modal-footer">
               <span>{selectedExperience.initialDate}</span>
-              <img src={selectedExperience.icon} title={selectedExperience.company} alt={`${selectedExperience.company} icon`} height={40} />
+              <Img src={selectedExperience.icon} text={`${selectedExperience.company}`} height={40} />
               <span>{selectedExperience.endDate}</span>
             </div>
           </div>

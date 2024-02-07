@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ProjectModel from '../lib/models/ProjectModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
+import Img from './global/Img';
 
 type ProjectModalProps = {
   selectedProject: ProjectModel | null;
@@ -13,10 +14,10 @@ type ProjectModalProps = {
 
 const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalProps) => {
   const [selectedImage, setSelectedImage] = useState<string>(selectedProject?.images[0] ?? '');
-  
+
   useEffect(() => {
     setSelectedImage(selectedProject?.images[0] ?? '');
-    if ( !!selectedProject ) {
+    if (!!selectedProject) {
       document.body.classList.add('no-scroll');
     } else {
       document.body.classList.remove('no-scroll');
@@ -25,34 +26,35 @@ const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalPr
 
   return (
     <>
-      { selectedProject &&  createPortal(
-        <Modal>
+      {createPortal(
+        <Modal className={(!!selectedProject) ? 'show' : ''}>
           <div className="modal">
             <div className="modal-close">
               <Button onClick={() => {
                 changeSelectedProject(null);
               }}>
-                <img src={closeIcon} title={`close-button`} alt={`close-button icon`} height={40} />
+                <Img src={closeIcon} text={`close-button`} height={40} showPlaceholder={false} />
               </Button>
             </div>
             <div className="modal-body">
               <div className="modal-body-info">
-                <h4>{selectedProject.title}</h4>
+                <h4>{selectedProject?.title}</h4>
                 <div className="modal-body-info-meta">
-                  <span>{selectedProject.company}</span>
-                  <span>{selectedProject.date}</span>
+                  <span>{selectedProject?.company}</span>
+                  <span>{selectedProject?.date}</span>
                 </div>
-                <p>{selectedProject.description}</p>
+                <p>{selectedProject?.description}</p>
               </div>
               <div className="modal-body-gallery">
                 <picture>
-                  <img src={selectedImage} alt='' height={100} />
+                  <img src={selectedImage} alt={`selected preview`} height={100} />
                 </picture>
                 <ul className="modal-body-gallery-options">
-                  {selectedProject.images.map(image => (
-                    <li className={(selectedImage === image ? 'current' : '')} 
-                        onClick={() => {setSelectedImage(image)}}>
-                      <img src={image} alt='' height={100} />
+                  {selectedProject?.images.map((image, idx) => (
+                    <li className={(selectedImage === image ? 'current' : '')}
+                      onClick={() => { setSelectedImage(image) }}
+                      key={idx}>
+                      <Img src={image} text={`option ${idx}`} height={100} showPlaceholder={false} />
                     </li>
                   ))}
                 </ul>
@@ -60,11 +62,10 @@ const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalPr
             </div>
             <div className="modal-footer">
               <h5>Created With</h5>
-
               <div className="project-skills">
-                {selectedProject.skills?.map((skill, index) => (
+                {selectedProject?.skills?.map((skill, index) => (
                   <div key={index} className='skill-icon'>
-                    <img src={skill.icon} title={skill.title} alt={`${skill.title} icon`} height={50} />
+                    <Img src={skill.icon} text={skill.title} height={50} showPlaceholder={false} />
                   </div>
                 ))}
               </div>
@@ -83,7 +84,7 @@ const Modal = styled.div`
   align-items: center;
   backdrop-filter: blur(5px);
   background: linear-gradient(30deg, var(--bg-main-50) 50%, var(--bg-secondary-50) 60%);
-  display: flex;
+  display: none;
   height: 100vh;
   justify-content: center;
   left: 0;
@@ -92,6 +93,10 @@ const Modal = styled.div`
   top: 0;
   width: 100vw;
   z-index: 999;
+
+  &.show {
+    display: flex;
+  }
 
   .modal {
     background-color: var(--bg-secondary-80);

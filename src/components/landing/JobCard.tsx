@@ -2,6 +2,7 @@ import ExperienceModel from '../../lib/models/ExperienceModel';
 import styled from 'styled-components';
 import Button from '../global/Button';
 import { Dispatch, SetStateAction } from 'react';
+import Img from '../global/Img';
 
 type JobCardProps = {
   experience: ExperienceModel;
@@ -22,7 +23,7 @@ const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): JSX.El
       </div>
       <div className="job-details">
         <div className="job-details-icon">
-          <img src={experience.icon} title={experience.company} alt={`${experience.company} icon`} />
+          <Img src={experience.icon} text={`${experience.company}`} height={60} />
         </div>
         <div className="job-details-time">{experience.initialDate} - {experience.endDate}</div>
       </div>

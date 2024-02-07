@@ -1,10 +1,23 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import WorkTimeline from '../../components/WorkTimeline';
 
+import { ImageObserver } from '../../lib/Observer';
+
 const WorkExperience = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!!sectionRef) {
+      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+
+      ImageObserver({ sectionElement: sectionElement });
+    }
+  }, [sectionRef]);
+  
   return (
-    <section className='bg-secondary'>
+    <section className='bg-secondary' ref={sectionRef}>
       <StyledContainer>
         <h2>Work Experience Expedition</h2>
         <p>Navigating Professional Evolution</p>

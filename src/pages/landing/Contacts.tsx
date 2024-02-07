@@ -1,12 +1,25 @@
+import { useEffect, useRef } from 'react';
 import ContactCard from '../../components/landing/ContactCard';
 import Container from '../../components/Container';
 import ContactsData from '../../lib/data/Contact';
 
 import styled from 'styled-components';
 
+import { ImageObserver } from '../../lib/Observer';
+
 const Contacts = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!!sectionRef) {
+      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+
+      ImageObserver({ sectionElement: sectionElement });
+    }
+  }, [sectionRef]);
+
   return (
-    <StyledSection>
+    <StyledSection ref={sectionRef}>
       <StyledContainer>
         <div className="grid">
           { ContactsData.map( contact => <ContactCard contact={contact} key={contact.text} /> ) }

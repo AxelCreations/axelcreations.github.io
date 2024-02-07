@@ -1,6 +1,6 @@
 import ContactModel from "../../lib/models/ContactModel";
 import styled from 'styled-components';
-
+import Img from '../global/Img';
 
 type ContactProps = {
   contact: ContactModel;
@@ -10,7 +10,7 @@ const ContactCard = ({ contact }: ContactProps) => {
   return (
     <StyledDiv href={contact.link} target="_blank">
       <div className="icon">
-        <img src={contact.icon} alt={`Contact ${contact.text}`} width={85} />
+        <Img src={contact.icon} text={`Contact ${contact.text}`} height={85} showPlaceholder={false} />
       </div>
       <div className="text">
         <span>{contact.text}</span>

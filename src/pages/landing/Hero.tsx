@@ -4,6 +4,7 @@ import profileImage from '../../img/profile.webp';
 import styled from 'styled-components';
 
 const Hero = () => {
+
   return (
     <section>
       <StyledContainer>

@@ -1,11 +1,24 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import SkillCard from '../../components/landing/SkillCard';
 import SkillsData from '../../lib/data/Skills';
 
+import { ImageObserver } from '../../lib/Observer';
+
 const Skills = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!!sectionRef) {
+      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+
+      ImageObserver({ sectionElement: sectionElement });
+    }
+  }, [sectionRef]);
+
   return (
-    <section className='bg-secondary'>
+    <section className='bg-secondary' ref={sectionRef}>
       <StyledContainer>
         <h2>Development Arsenal</h2>
         <p>Technical Skills Overview</p>

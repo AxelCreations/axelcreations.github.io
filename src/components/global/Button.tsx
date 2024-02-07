@@ -1,14 +1,15 @@
+import { ComponentProps } from "react";
 import styled from "styled-components";
 
-interface ButtonProps {
+type ButtonProps = {
   children: JSX.Element;
   className?: string;
   onClick?: any;
-}
+} & ComponentProps<"button">
 
-const Button = ({ children, className, onClick }: ButtonProps) => {
+const Button = ({ children, className, onClick, ...props }: ButtonProps) => {
   return (
-    <StyledButton className={className} onClick={onClick}>
+    <StyledButton className={className} onClick={onClick} {...props}>
       {children}
     </StyledButton>
   )
