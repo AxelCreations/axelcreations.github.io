@@ -1,11 +1,24 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import ProfileData from '../../lib/data/Profile';
 import ProfileCard from '../../components/landing/ProfileCard';
 
+import { ImageObserver } from '../../lib/Observer';
+
 const Profile = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!!sectionRef) {
+      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+
+      ImageObserver({ sectionElement: sectionElement });
+    }
+  }, [sectionRef]);
+
   return (
-    <section>
+    <section ref={sectionRef}>
       <StyledContainer>
         <h2>Professional Profile</h2>
         <p>Qualifications & Attributes</p>

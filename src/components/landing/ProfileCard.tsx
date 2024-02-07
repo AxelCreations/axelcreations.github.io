@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProfileModel from "../../lib/models/ProfileModel";
+import Img from "../global/Img";
 
 type ProfileCardProps = {
   profile: ProfileModel;
@@ -30,7 +31,7 @@ const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
         }
       </div>
       <div className="profile-icon">
-        <img src={profile.icon} title={`Profile ${profile.title}`} alt={`${profile.title} icon`} height={42} />
+        <Img src={profile.icon} text={`Profile ${profile.title}`} height={42} />
       </div>
     </StyledProfile>
   )

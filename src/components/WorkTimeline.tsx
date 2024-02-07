@@ -8,6 +8,7 @@ import Button from './global/Button';
 import { HorizontalScroll } from '../lib/HorizontalScroll';
 import ExperienceModal from './ExperienceModal';
 import ExperienceModel from '../lib/models/ExperienceModel';
+import Img from './global/Img';
 
 const WorkTimeline = (): JSX.Element => {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceModel|null>(null);
@@ -32,11 +33,11 @@ const WorkTimeline = (): JSX.Element => {
       <StyledControlsContainer>
         <StyledButton className='control control-left'
           onClick={() => { HorizontalScroll({ target: '#timeline-container', speed: -900 }) }}>
-          <img src={ArrowLeftIcon} alt='control arrow left' />
+          <Img src={ArrowLeftIcon} text={`control arrow left`} height={32} showPlaceholder={false} />
         </StyledButton>
         <StyledButton className='control control-right'
           onClick={() => { HorizontalScroll({ target: '#timeline-container', speed: 900 }) }}>
-          <img src={ArrowLeftIcon} alt='control arrow right' />
+          <Img src={ArrowLeftIcon} text={`control arrow right`} height={32} showPlaceholder={false} />
         </StyledButton>
       </StyledControlsContainer>
 

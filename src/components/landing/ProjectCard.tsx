@@ -7,6 +7,7 @@ import { HorizontalScroll } from '../../lib/HorizontalScroll';
 import ArrowLeftIcon from '../../img/arrow-left.svg';
 import LinkIcon from '../../img/link.svg';
 import RepoIcon from '../../img/repo.svg';
+import Img from '../global/Img';
 
 type ProjectCardProps = {
   project: ProjectModel;
@@ -22,16 +23,19 @@ const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCard
           <span>{project.date}</span>
         </div>
         <div className="project-header-images" id={`project-carousel-${carouselId}`}>
-          {project.images.map((img, index) => <div className="image" key={index}><img src={img} alt={`${project.title} (${index})`} height={40} /></div>)}
+          {project.images.map((img, index) =>
+            <div className="image" key={index}>
+              <Img src={img} text={`${project.title} (${index})`} height={40} />
+            </div>)}
         </div>
         <div className="project-header-images-controls">
           <Button className='control control-left'
             onClick={() => { HorizontalScroll({ target: `#project-carousel-${carouselId}`, speed: -300 }) }}>
-            <img src={ArrowLeftIcon} alt='control arrow left' height={24} />
+            <Img src={ArrowLeftIcon} text={`control arrow left`} height={24} showPlaceholder={false} />
           </Button>
           <Button className='control control-right'
             onClick={() => { HorizontalScroll({ target: `#project-carousel-${carouselId}`, speed: 300 }) }}>
-            <img src={ArrowLeftIcon} alt='control arrow right' height={24} />
+            <Img src={ArrowLeftIcon} text={`control arrow right`} height={24} showPlaceholder={false} />
           </Button>
         </div>
       </div>
@@ -40,17 +44,17 @@ const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCard
         <div className="project-content-company">{project.company}</div>
         <p className="project-content-excerpt">{project.excerpt}</p>
         <div className="project-content-links">
-          <Button onClick={() => {changeSelectedProject(project)}}><span>More...</span></Button>
+          <Button onClick={() => { changeSelectedProject(project) }}><span>More...</span></Button>
           <div className="row">
             {project.link?.length &&
               <a href={project.link} title={`${project.title} site`} target="_blank" rel="noreferrer">
-                <img src={LinkIcon} alt={`${project.title} site icon`} height={24} />
+                <Img src={LinkIcon} text={`${project.title} site`} height={24} showPlaceholder={false} />
               </a>
             }
 
             {project.repo?.length &&
               <a href={project.repo} title={`${project.title} repo (Request access)`} target="_blank" rel="noreferrer">
-                <img src={RepoIcon} alt={`${project.title} repo icon`} height={24} />
+                <Img src={RepoIcon} text={`${project.title} repo`} height={24} showPlaceholder={false} />
               </a>
             }
           </div>

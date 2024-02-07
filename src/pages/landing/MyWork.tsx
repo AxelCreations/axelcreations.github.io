@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 
@@ -7,7 +7,10 @@ import ProjectModel from '../../lib/models/ProjectModel';
 import ProjectCard from '../../components/landing/ProjectCard';
 import ProjectModal from '../../components/ProjectModal';
 
+import { ImageObserver } from '../../lib/Observer';
+
 const MyWork = (): JSX.Element => {
+  const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<ProjectModel|null>(null);
 
   useEffect(() => {
@@ -18,8 +21,16 @@ const MyWork = (): JSX.Element => {
     }
   }, [selectedProject]);
 
+  useEffect(() => {
+    if (!!sectionRef) {
+      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+
+      ImageObserver({ sectionElement: sectionElement });
+    }
+  }, [sectionRef]);
+
   return (
-    <section>
+    <section ref={sectionRef}>
       <StyledContainer>
         <h2>Coding Solutions</h2>
         <p>Ideas turned into reality</p>

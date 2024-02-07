@@ -1,5 +1,6 @@
 import SkillModel, { SkillLevel } from '../../lib/models/SkillModel';
 import styled from 'styled-components';
+import Img from '../global/Img';
 
 type SkillCardProps = {
   skill: SkillModel;
@@ -9,7 +10,7 @@ const SkillCard = ({ skill }: SkillCardProps) => {
   return (
     <StyledSkill className="skill">
       <div className="skill-icon">
-        <img src={skill.icon} title={skill.title} alt={`${skill.title} icon`} height={50} />
+        <Img src={skill.icon} text={skill.title} height={50} />
       </div>
       <div className="skill-level">
         <span className={`skill-level-bar level-${skill.level}`}></span>
@@ -23,7 +24,6 @@ const SkillCard = ({ skill }: SkillCardProps) => {
 }
 
 export default SkillCard;
-
 
 const StyledSkill = styled.div`
   background-color: var(--bg-main);

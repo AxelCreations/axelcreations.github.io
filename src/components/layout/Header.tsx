@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import logo from '../../img/ReynelAxel.svg';
-import pdfIcon from '../../img/pdf.svg';
 import Container from '../Container';
 
 const Header = () => {
