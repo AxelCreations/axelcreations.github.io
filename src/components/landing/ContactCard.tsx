@@ -23,20 +23,37 @@ export default ContactCard;
 
 const StyledDiv = styled.a`
   align-items: center;
-  background-color: var(--bg-main);
-  color: var(--color-black);
-  display: flex;
   border-radius: 14px;
+  border: 2px solid var(--bg-secondary);
+  color: var(--bg-white);
+  display: flex;
   gap: 1rem;
-  padding: 1rem 0;
-  border: 1px solid var(--bg-secondary);
   justify-content: center;
-  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.225);
+  padding: 1rem 0;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  &::after {
+    content: '';
+    background-color: var(--bg-secondary);
+    position: absolute;
+    display: block;
+    height: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    width: 100%;
+    transition: transform 0.2s ease-out;
+    z-index: -1;
+  }
   
   &:hover {
     box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.125);
-    color: var(--color-black);
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
   
   .icon {

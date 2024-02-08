@@ -6,7 +6,6 @@ interface ImageObserverProps {
 
 export const ImageObserver = ({ sectionElement, stopObserver = true, action = () => {} }: ImageObserverProps): void => {
   const observerOptions = {
-    rootMargin: '-200px',
     threshold: 0.1
   }
 
