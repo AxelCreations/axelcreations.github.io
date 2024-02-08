@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.281bbf6f.css",
-    "main.js": "/static/js/main.fcc87450.js",
+    "main.js": "/static/js/main.93077207.js",
     "static/js/787.cfb77f80.chunk.js": "/static/js/787.cfb77f80.chunk.js",
     "static/media/bspoke2.webp": "/static/media/bspoke2.d8fab0d7468ccabaea00.webp",
     "static/media/bspoke1.webp": "/static/media/bspoke1.ccd886cf50d2bc39710c.webp",
@@ -68,6 +68,7 @@
     "static/media/tumontura2.webp": "/static/media/tumontura2.aa6ce8de4a9b320c9920.webp",
     "static/media/linux.webp": "/static/media/linux.a6a4dbc42e813582a75f.webp",
     "static/media/speed3.webp": "/static/media/speed3.96948765209014d7ea45.webp",
+    "static/media/gmail.svg": "/static/media/gmail.dc650ba38f7532909358dc1c40948574.svg",
     "static/media/vba.webp": "/static/media/vba.f222c91940358d6e6fa7.webp",
     "static/media/excel.webp": "/static/media/excel.311d3d3cd173cabbc3ef.webp",
     "static/media/azure.webp": "/static/media/azure.abbabcf2cd4af25151fd.webp",
@@ -98,20 +99,19 @@
     "static/media/next.svg": "/static/media/next.1b2b52c044b9dcea988e68b966864c5a.svg",
     "static/media/education.svg": "/static/media/education.600e9697da3fe93fb1838a93c366d3b0.svg",
     "static/media/createape.webp": "/static/media/createape.bb7738b10e9354e7bf72.webp",
-    "static/media/github.svg": "/static/media/github.2b6f45df2e85f83d6f2e493035fee0cc.svg",
     "static/media/repo.svg": "/static/media/repo.84a7b3a6dbd5dd8adbea1ce97ef4ad9e.svg",
-    "static/media/x.svg": "/static/media/x.7d913b60f4de0b34edd344ec177f8c16.svg",
     "static/media/bcrd.webp": "/static/media/bcrd.49b0921459caad2d4e34.webp",
-    "static/media/linkedin.svg": "/static/media/linkedin.ae2dd8353fe8ad2fed05b09e2a587c1b.svg",
-    "static/media/gmail.svg": "/static/media/gmail.0053c3d2acd4700e167f0e339714070f.svg",
     "static/media/link.svg": "/static/media/link.2b08bba7d34df8fe118e1b100928f2b8.svg",
+    "static/media/github.svg": "/static/media/github.c4676d0d411e00e88060cfe55984f9ba.svg",
     "index.html": "/index.html",
+    "static/media/linkedin.svg": "/static/media/linkedin.e28525dbd68afd61531fb3f568db92fb.svg",
+    "static/media/x.svg": "/static/media/x.0535fd93c3a85052d46f1ce24c4a6ae3.svg",
     "main.281bbf6f.css.map": "/static/css/main.281bbf6f.css.map",
-    "main.fcc87450.js.map": "/static/js/main.fcc87450.js.map",
+    "main.93077207.js.map": "/static/js/main.93077207.js.map",
     "787.cfb77f80.chunk.js.map": "/static/js/787.cfb77f80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.281bbf6f.css",
-    "static/js/main.fcc87450.js"
+    "static/js/main.93077207.js"
   ]
 }
