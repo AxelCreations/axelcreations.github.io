@@ -131,6 +131,20 @@ const Modal = styled.div`
       padding: 2rem 2rem;
     }
 
+    @media screen and (max-width: 578px) {
+      &::-webkit-scrollbar {
+        overflow: hidden;
+        border-radius: 2rem;
+        box-shadow: 0 0 1px 1px rgba(0,0,0,0.25);
+        width: 3px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--bg-main);
+        border-radius: 0.5rem;
+      }
+    }
+
     &-close {
       position: absolute;
       top: 1.5rem;

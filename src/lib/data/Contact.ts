@@ -23,7 +23,7 @@ const ContactsData: ContactModel[] = [
   },
   {
     icon: xIcon,
-    text: '(X) Twitter',
+    text: 'Twitter',
     link: 'https://twitter.com/ReynelAxel/',
   },
 ];

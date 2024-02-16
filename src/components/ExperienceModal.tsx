@@ -31,7 +31,7 @@ const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: Exper
             </div>
             <div className="modal-footer">
               <span>{selectedExperience.initialDate}</span>
-              <Img src={selectedExperience.icon} text={`${selectedExperience.company}`} height={40} />
+                <Img src={selectedExperience.icon} text={`${selectedExperience.company}`} height={40} showPlaceholder={false} />
               <span>{selectedExperience.endDate}</span>
             </div>
           </div>
