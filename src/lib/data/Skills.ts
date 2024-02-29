@@ -39,6 +39,11 @@ import visioIcon from '../../img/skills/visio.svg';
 import winServerIcon from '../../img/skills/winserver.webp';
 import wordIcon from '../../img/skills/word.webp';
 import wpIcon from '../../img/skills/wp.webp';
+import psdIcon from '../../img/skills/psd.webp';
+import illustratorIcon from '../../img/skills/illustrator.webp';
+import figmaIcon from '../../img/skills/figma.webp';
+import xdIcon from '../../img/skills/xd.svg';
+
 
 type SkillDataProps = {
   category: string;
@@ -187,7 +192,7 @@ const SkillsData: SkillDataProps[] = [
     ]
   },
   {
-    category: 'Office Automation',
+    category: 'Productivity and Collaboration',
     skills: [
       {
         icon: excelIcon,
@@ -262,6 +267,31 @@ const SkillsData: SkillDataProps[] = [
       {
         icon: linuxIcon,
         title: 'Linux (Ubuntu CLI)',
+        level: SkillLevel.Beginner
+      },
+    ]
+  },
+  {
+    category: 'Art Creation',
+    skills: [
+      {
+        icon: psdIcon,
+        title: 'PhotoShop',
+        level: SkillLevel.Experienced
+      },
+      {
+        icon: illustratorIcon,
+        title: 'Illustrator',
+        level: SkillLevel.Advanced
+      },
+      {
+        icon: figmaIcon,
+        title: 'Figma',
+        level: SkillLevel.Beginner
+      },
+      {
+        icon: xdIcon,
+        title: 'Adobe XD',
         level: SkillLevel.Beginner
       },
     ]

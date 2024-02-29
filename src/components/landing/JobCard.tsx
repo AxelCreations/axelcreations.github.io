@@ -18,7 +18,7 @@ const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): JSX.El
         <h4 className="job-content-company">{experience.company}</h4>
         <p className="job-content-details">{experience.excerpt}</p>
         <StyledButton onClick={() => {changeSelectedExperience(experience)}}>
-          <span>More...</span>
+          <span>Show more...</span>
         </StyledButton>
       </div>
       <div className="job-details">
@@ -204,4 +204,10 @@ const StyledButton = styled(Button)`
   padding: 0;
   text-align: right;
   width: 100%;
+
+  span {
+    border-radius: 8px;
+    background-color: var(--bg-main);
+    padding: 0.35rem 0.75rem;
+  }
 `;

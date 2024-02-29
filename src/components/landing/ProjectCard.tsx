@@ -44,7 +44,7 @@ const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCard
         <div className="project-content-company">{project.company}</div>
         <p className="project-content-excerpt">{project.excerpt}</p>
         <div className="project-content-links">
-          <Button onClick={() => { changeSelectedProject(project) }}><span>More...</span></Button>
+          <Button onClick={() => { changeSelectedProject(project) }}><span>Show details...</span></Button>
           <div className="row">
             {project.link?.length &&
               <a href={project.link} title={`${project.title} site`} target="_blank" rel="noreferrer">
