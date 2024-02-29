@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.281bbf6f.css",
-    "main.js": "/static/js/main.93077207.js",
+    "main.js": "/static/js/main.05456dfd.js",
     "static/js/787.cfb77f80.chunk.js": "/static/js/787.cfb77f80.chunk.js",
     "static/media/bspoke2.webp": "/static/media/bspoke2.d8fab0d7468ccabaea00.webp",
     "static/media/bspoke1.webp": "/static/media/bspoke1.ccd886cf50d2bc39710c.webp",
@@ -50,6 +50,8 @@
     "static/media/lash2.webp": "/static/media/lash2.349ea937692dc5792eed.webp",
     "static/media/sql.webp": "/static/media/sql.c06ce779d9f7d5742380.webp",
     "static/media/repair1.webp": "/static/media/repair1.efe287331534d8b94f87.webp",
+    "static/media/psd.webp": "/static/media/psd.2c57fbf4090ece608038.webp",
+    "static/media/illustrator.webp": "/static/media/illustrator.0e8625ee76b78c4e06a9.webp",
     "static/media/longevi2.webp": "/static/media/longevi2.9c17e254114168d16fcc.webp",
     "static/media/repair3.webp": "/static/media/repair3.a9c427a91b6f12fa485c.webp",
     "static/media/airtm1.webp": "/static/media/airtm1.d4a3e95b321aba055d07.webp",
@@ -58,6 +60,7 @@
     "static/media/ts.webp": "/static/media/ts.0719766d56489381de10.webp",
     "static/media/ReynelAxel.svg": "/static/media/ReynelAxel.de44ab24b1ba8a1a078bc8618b1ae5ac.svg",
     "static/media/dotnet.webp": "/static/media/dotnet.17edb0467b17b48c2d19.webp",
+    "static/media/figma.webp": "/static/media/figma.bd3cd2143b606c0a5fba.webp",
     "static/media/winserver.webp": "/static/media/winserver.8a55b001943f3c04d65a.webp",
     "static/media/sqlserver.svg": "/static/media/sqlserver.01b445d5e0f5594aaab3688ff21e638b.svg",
     "static/media/longevi5.webp": "/static/media/longevi5.5ebbcaf5a6b9dc1c69ae.webp",
@@ -91,6 +94,7 @@
     "static/media/project.webp": "/static/media/project.a7cbf85b55d4636f1e56.webp",
     "static/media/list.svg": "/static/media/list.7876b4216643b4a5eef684196a3c2da0.svg",
     "static/media/ef.webp": "/static/media/ef.6ac1d99fd050393adde0.webp",
+    "static/media/xd.svg": "/static/media/xd.64971bd52f9ac98cda7f2defc855adf6.svg",
     "static/media/scotiabank.webp": "/static/media/scotiabank.e1ce0abb6fc8311a2ad0.webp",
     "static/media/arrow-left.svg": "/static/media/arrow-left.6047bbe19b0fef26743188063484da54.svg",
     "static/media/progreso.webp": "/static/media/progreso.fdd96b9b2f9141621283.webp",
@@ -107,11 +111,11 @@
     "static/media/linkedin.svg": "/static/media/linkedin.e28525dbd68afd61531fb3f568db92fb.svg",
     "static/media/x.svg": "/static/media/x.0535fd93c3a85052d46f1ce24c4a6ae3.svg",
     "main.281bbf6f.css.map": "/static/css/main.281bbf6f.css.map",
-    "main.93077207.js.map": "/static/js/main.93077207.js.map",
+    "main.05456dfd.js.map": "/static/js/main.05456dfd.js.map",
     "787.cfb77f80.chunk.js.map": "/static/js/787.cfb77f80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.281bbf6f.css",
-    "static/js/main.93077207.js"
+    "static/js/main.05456dfd.js"
   ]
 }
