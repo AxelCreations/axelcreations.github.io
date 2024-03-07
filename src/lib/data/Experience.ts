@@ -4,8 +4,19 @@ import createIcon from '../../img/experience/createape.webp';
 import bcrdIcon from '../../img/experience/bcrd.webp';
 import scotiabankIcon from '../../img/experience/scotiabank.webp';
 import progresoIcon from '../../img/experience/progreso.webp';
+import sunriseIcon from '../../img/experience/codesunrise.svg';
 
 const ExperienceData: ExperienceModel[] = [
+  {
+    icon: sunriseIcon,
+    company: 'CodeSunrise',
+    title: 'Senior Web Developer',
+    description: 'Creating awesome and fancy websites using WordPress. My main task is to create custom themes from Figma designs and develop advance functionalities such as API integrations, custom Widgets, Plugins and AJAX interactions using PHP, JS and highly creativity.',
+    excerpt: 'Creating awesome and fancy websites using WordPress. My main task is to create custom themes from Figma designs and develop...',
+    initialDate: 'Jan 2024',
+    endDate: 'Present',
+    skills: [],
+  },
   {
     icon: createIcon,
     company: 'CreateApe',
