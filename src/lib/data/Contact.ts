@@ -19,7 +19,7 @@ const ContactsData: ContactModel[] = [
   {
     icon: gmailIcon,
     text: 'Gmail',
-    link: 'mailto:reynelaxel@gmil.com?subject%3DLet%27s%20work%20together',
+    link: 'mailto:reynelaxel@gmail.com?subject%3DLet%27s%20work%20together',
   },
   {
     icon: xIcon,
