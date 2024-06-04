@@ -22,7 +22,9 @@ const App = () => {
         const element = document.querySelector(hash);
 
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 800);
         }
       }
     };
