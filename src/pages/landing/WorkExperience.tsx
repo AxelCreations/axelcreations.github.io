@@ -17,7 +17,7 @@ const WorkExperience = () => {
   }, [sectionRef]);
   
   return (
-    <section className='bg-secondary' ref={sectionRef}>
+    <section className='bg-secondary' ref={sectionRef} id="experience-section">
       <StyledContainer>
         <h2>Work Experience Expedition</h2>
         <p>Navigating Professional Evolution</p>

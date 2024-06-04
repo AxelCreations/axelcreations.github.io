@@ -30,7 +30,7 @@ const MyWork = (): JSX.Element => {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef}>
+    <section ref={sectionRef} id="my-work-section">
       <StyledContainer>
         <h2>Coding Solutions</h2>
         <p>Ideas turned into reality</p>

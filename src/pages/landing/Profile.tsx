@@ -18,7 +18,7 @@ const Profile = () => {
   }, [sectionRef]);
 
   return (
-    <section ref={sectionRef}>
+    <section ref={sectionRef} id="profile-section">
       <StyledContainer>
         <h2>Professional Profile</h2>
         <p>Qualifications & Attributes</p>

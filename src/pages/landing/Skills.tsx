@@ -18,7 +18,7 @@ const Skills = () => {
   }, [sectionRef]);
 
   return (
-    <section className='bg-secondary' ref={sectionRef}>
+    <section className='bg-secondary' ref={sectionRef} id="skills-section">
       <StyledContainer>
         <h2>Development Arsenal</h2>
         <p>Technical Skills Overview</p>

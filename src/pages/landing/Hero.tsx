@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const Hero = () => {
 
   return (
-    <section>
+    <section id="hero-section">
       <StyledContainer>
         <div className="content">
           <p className='content-subtitle'>I'm</p>
