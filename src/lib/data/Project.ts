@@ -103,6 +103,17 @@ const ProjectsData: ProjectModel[] = [
     images: GetProjectImageList({ projectName: 'lash', count: 5 }),
     skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'WordPress', 'Git', 'GitHub'] }),
   },
+  {
+    title: 'MyTagProfile',
+    company: 'AxelCreations',
+    description: 'Laravel project focused on developing custom profiles for sharing professional information, contacts, and links. This project features a fully dynamic interface with extensive customization using JavaScript, TypeScript, CSS, and PHP, ensuring a seamless and interactive user experience.',
+    excerpt: 'Laravel project focused on developing custom profiles for sharing professional information, contacts, and links. This project..',
+    date: 'October 2024',
+    link: 'https://mytagprofile.com/',
+    repo: null,
+    images: GetProjectImageList({ projectName: 'mtp', count: 5 }),
+    skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'Laravel', 'TypeScript', 'ReactJS', 'Git', 'GitHub'] }),
+  },
 ];
 
 export default ProjectsData;
