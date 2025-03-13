@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.281bbf6f.css",
-    "main.js": "/static/js/main.ac1fc0c9.js",
+    "main.js": "/static/js/main.03a9d8de.js",
     "static/js/787.cfb77f80.chunk.js": "/static/js/787.cfb77f80.chunk.js",
     "static/media/bspoke2.webp": "/static/media/bspoke2.d8fab0d7468ccabaea00.webp",
+    "static/media/mtp3.webp": "/static/media/mtp3.bff3d29d2731da8de071.webp",
     "static/media/bspoke1.webp": "/static/media/bspoke1.ccd886cf50d2bc39710c.webp",
     "static/media/beauty1.webp": "/static/media/beauty1.61245dca78d08a4d2f2a.webp",
     "static/media/lash1.webp": "/static/media/lash1.4e4c5346a7b7eb5dccfe.webp",
@@ -25,9 +26,12 @@
     "static/media/bspoke3.webp": "/static/media/bspoke3.b8336d072757baf272d6.webp",
     "static/media/reynelaxel-logo.webp": "/static/media/reynelaxel-logo.157e9a3c431850a4b5cb.webp",
     "static/media/beauty2.webp": "/static/media/beauty2.921bbd222f12a071284f.webp",
+    "static/media/mtp5.webp": "/static/media/mtp5.b14bf20ff30d8ecff564.webp",
     "static/media/bspoke4.webp": "/static/media/bspoke4.583963881e5cbf7d0a2c.webp",
+    "static/media/mtp4.webp": "/static/media/mtp4.bca1fe98120bdaa48fb3.webp",
     "static/media/repair4.webp": "/static/media/repair4.a126a27593f17dcd628c.webp",
     "static/media/wp.webp": "/static/media/wp.744571f42ee8676360a2.webp",
+    "static/media/mtp1.webp": "/static/media/mtp1.78baf632f42451ba750b.webp",
     "static/media/speed1.webp": "/static/media/speed1.8d66941ea0d338ae85df.webp",
     "static/media/bspoke5.webp": "/static/media/bspoke5.7a30af752c9226130b9d.webp",
     "static/media/tera1.webp": "/static/media/tera1.4c9d4562a1921f6d6f5d.webp",
@@ -38,6 +42,7 @@
     "static/media/cc2.webp": "/static/media/cc2.5d241911698517efb468.webp",
     "static/media/sass.webp": "/static/media/sass.3a497e5f3fcfcd887bd2.webp",
     "static/media/longevi4.webp": "/static/media/longevi4.aededf39e1cd61521374.webp",
+    "static/media/mtp2.webp": "/static/media/mtp2.e0673784ff094abc6c2a.webp",
     "static/media/js.webp": "/static/media/js.b48e3aeb3909e0bfe0f6.webp",
     "static/media/profile.webp": "/static/media/profile.5771320531269512249c.webp",
     "static/media/access.webp": "/static/media/access.db53b8275b2de9e3654b.webp",
@@ -112,11 +117,11 @@
     "static/media/linkedin.svg": "/static/media/linkedin.e28525dbd68afd61531fb3f568db92fb.svg",
     "static/media/x.svg": "/static/media/x.0535fd93c3a85052d46f1ce24c4a6ae3.svg",
     "main.281bbf6f.css.map": "/static/css/main.281bbf6f.css.map",
-    "main.ac1fc0c9.js.map": "/static/js/main.ac1fc0c9.js.map",
+    "main.03a9d8de.js.map": "/static/js/main.03a9d8de.js.map",
     "787.cfb77f80.chunk.js.map": "/static/js/787.cfb77f80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.281bbf6f.css",
-    "static/js/main.ac1fc0c9.js"
+    "static/js/main.03a9d8de.js"
   ]
 }
