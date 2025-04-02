@@ -5,8 +5,19 @@ import bcrdIcon from '../../img/experience/bcrd.webp';
 import scotiabankIcon from '../../img/experience/scotiabank.webp';
 import progresoIcon from '../../img/experience/progreso.webp';
 import sunriseIcon from '../../img/experience/codesunrise.svg';
+import memegamesIcon from '../../img/experience/memegames.webp';
 
 const ExperienceData: ExperienceModel[] = [
+  {
+    icon: memegamesIcon,
+    company: 'MemeGames',
+    title: 'Senior FullStack Developer',
+    description: 'Maintaining and enhancing the React/Material-UI frontend while contributing to backend development with Nest.js, MongoDB, and TypeScript. Focused on improving performance, implementing new features, and ensuring a seamless user experience.',
+    excerpt: 'Maintaining and enhancing the React/Material-UI frontend while contributing to backend development with...',
+    initialDate: 'Jun 2024',
+    endDate: 'Present',
+    skills: [],
+  },
   {
     icon: sunriseIcon,
     company: 'CodeSunrise',
@@ -14,7 +25,7 @@ const ExperienceData: ExperienceModel[] = [
     description: 'Creating awesome and fancy websites using WordPress. My main task is to create custom themes from Figma designs and develop advance functionalities such as API integrations, custom Widgets, Plugins and AJAX interactions using PHP, JS and highly creativity.',
     excerpt: 'Creating awesome and fancy websites using WordPress. My main task is to create custom themes from Figma designs and develop...',
     initialDate: 'Jan 2024',
-    endDate: 'Present',
+    endDate: 'Mar 2025',
     skills: [],
   },
   {

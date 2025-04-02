@@ -43,6 +43,8 @@ import psdIcon from '../../img/skills/psd.webp';
 import illustratorIcon from '../../img/skills/illustrator.webp';
 import figmaIcon from '../../img/skills/figma.webp';
 import xdIcon from '../../img/skills/xd.svg';
+import mongodbIcon from '../../img/skills/mongodb.webp';
+import nestjsIcon from '../../img/skills/nestjs.webp';
 
 
 type SkillDataProps = {
@@ -142,17 +144,22 @@ const SkillsData: SkillDataProps[] = [
       {
         icon: laravelIcon,
         title: 'Laravel',
-        level: SkillLevel.Advanced
+        level: SkillLevel.Experienced
       },
       {
         icon: reactIcon,
         title: 'ReactJS',
-        level: SkillLevel.Advanced
+        level: SkillLevel.Experienced
       },
       {
         icon: nextIcon,
         title: 'NextJS',
         level: SkillLevel.Advanced
+      },
+      {
+        icon: nestjsIcon,
+        title: 'NestJS',
+        level: SkillLevel.Experienced
       },
       {
         icon: sqlServerIcon,
@@ -162,6 +169,11 @@ const SkillsData: SkillDataProps[] = [
       {
         icon: mysqlIcon,
         title: 'MySQL',
+        level: SkillLevel.Experienced
+      },
+      {
+        icon: mongodbIcon,
+        title: 'MongoDB',
         level: SkillLevel.Experienced
       },
       {

@@ -15,7 +15,7 @@ const Hero = () => {
             A Dominican Developer who loves programming, web design and problem solving.
           </p>
           <p className='content-description'>
-            With more than 12 years of experience in the Banking Sector, more than 7 years as a freelancer Full-Stack developer, I've mastered technologies like C#, EF, Dotnet, Blazor, MVC, HTML/CSS/JS, and Bootstrap. With 3 years as a Senior Web Developer specializing in WordPress, while also delving into Laravel and ReactJS.
+            With over 12 years of experience in the banking sector, 7+ years as a full-stack developer freelancer working with C#, Entity Framework, .NET, Blazor, and MVC, and 4+ years as a full-stack web developer specializing in WordPress and Laravel. I have strong expertise in front-end technologies like HTML, CSS, JavaScript, Bootstrap, Tailwind, SASS, Gulp, and TypeScript, creating websites from Figma designs.
           </p>
         </div>
         <div className="image">
