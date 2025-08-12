@@ -6,7 +6,7 @@
 ![AxelCreations Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=axelcreations&theme=dark&layout=compact)
 
 ### License
-MIT. Copyright (c) 2024 Reynel Axel Perdomo (AxelCreations)
+MIT. Copyright (c) 2025 Reynel Axel Perdomo (AxelCreations)
 
 <!--
 **AxelCreations/axelcreations** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
