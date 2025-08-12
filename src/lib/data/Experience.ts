@@ -9,13 +9,23 @@ import memegamesIcon from '../../img/experience/memegames.webp';
 
 const ExperienceData: ExperienceModel[] = [
   {
+    icon: bcrdIcon,
+    company: 'Central Bank of the Dominican Republic',
+    title: 'Senior Software Developer',
+    description: 'Assist request and incidents of the Oracle PeopleSoft platform users and create solutions using the PeopleCode programming language.',
+    excerpt: 'Assist request and incidents of the Oracle PeopleSoft platform users and create solutions using the PeopleCode...',
+    initialDate: 'Jul 2025',
+    endDate: 'Present',
+    skills: [],
+  },
+  {
     icon: memegamesIcon,
     company: 'MemeGames',
     title: 'Senior FullStack Developer',
     description: 'Maintaining and enhancing the React/Material-UI frontend while contributing to backend development with Nest.js, MongoDB, and TypeScript. Focused on improving performance, implementing new features, and ensuring a seamless user experience.',
     excerpt: 'Maintaining and enhancing the React/Material-UI frontend while contributing to backend development with...',
     initialDate: 'Jun 2024',
-    endDate: 'Present',
+    endDate: 'Jul 2025',
     skills: [],
   },
   {
