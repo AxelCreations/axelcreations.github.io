@@ -114,6 +114,17 @@ const ProjectsData: ProjectModel[] = [
     images: GetProjectImageList({ projectName: 'mtp', count: 5 }),
     skills: GetSkillListByName({ names: ['PHP', 'SASS', 'HTML5', 'CSS3', 'JavaScript', 'Laravel', 'TypeScript', 'ReactJS', 'Git', 'GitHub'] }),
   },
+  {
+    title: 'Memegames.ai',
+    company: 'MemeGames',
+    description: 'Cryptocurrency betting platform integrating Solana and Ethereum APIs for digital payments. The application features real-time betting, interactive charts, live updates, wallet-based transactions, and a microservices architecture supported by MongoDB and Redis.',
+    excerpt: 'Cryptocurrency betting platform with Solana and Ethereum integrations, real-time updates, interactive charts, and wallet-based payments.',
+    date: 'July 2025',
+    link: null,
+    repo: null,
+    images: GetProjectImageList({ projectName: 'memegames', count: 7 }),
+    skills: GetSkillListByName({ names: ['SASS', 'HTML5', 'CSS3', 'JavaScript', 'NodeJS', 'NestJS', 'TypeScript', 'ReactJS', 'Git', 'GitLab', 'AWS', 'MongoDB', 'Redis', 'Linux (Ubuntu CLI)', 'Solana', 'Ethereum'] }),
+  },
 ];
 
 export default ProjectsData;

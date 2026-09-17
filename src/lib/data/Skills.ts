@@ -45,6 +45,9 @@ import figmaIcon from '../../img/skills/figma.webp';
 import xdIcon from '../../img/skills/xd.svg';
 import mongodbIcon from '../../img/skills/mongodb.webp';
 import nestjsIcon from '../../img/skills/nestjs.webp';
+import redisIcon from '../../img/skills/redis.webp';
+import ethIcon from '../../img/skills/eth.webp';
+import solIcon from '../../img/skills/sol.webp';
 
 
 type SkillDataProps = {
@@ -199,6 +202,26 @@ const SkillsData: SkillDataProps[] = [
       {
         icon: gitlabIcon,
         title: 'GitLab',
+        level: SkillLevel.Experienced
+      },
+      {
+        icon: redisIcon,
+        title: 'Redis',
+        level: SkillLevel.Experienced
+      },
+    ]
+  },
+  {
+    category: 'Web3 Development',
+    skills: [
+      {
+        icon: ethIcon,
+        title: 'Ethereum',
+        level: SkillLevel.Experienced
+      },
+      {
+        icon: solIcon,
+        title: 'Solana',
         level: SkillLevel.Experienced
       },
     ]

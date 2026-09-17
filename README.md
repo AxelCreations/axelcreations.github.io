@@ -1,12 +1,14 @@
-### Hi there 👋
+# Reynel Axel Perdomo is here
 
-## Reynel Axel Perdomo is here.
+## Hi there 👋
 
+<!-- 
 ![AxelCreations's github stats](https://github-readme-stats.vercel.app/api?username=axelcreations&show_icons=true&theme=dark)
-![AxelCreations Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=axelcreations&theme=dark&layout=compact)
+![AxelCreations Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=axelcreations&theme=dark&layout=compact) -->
 
 ### License
-MIT. Copyright (c) 2025 Reynel Axel Perdomo (AxelCreations)
+
+MIT. Copyright (c) 2026 Reynel Axel Perdomo (AxelCreations)
 
 <!--
 **AxelCreations/axelcreations** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
