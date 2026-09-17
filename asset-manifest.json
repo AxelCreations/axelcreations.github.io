@@ -1,9 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.281bbf6f.css",
-    "main.js": "/static/js/main.7864e801.js",
+    "main.js": "/static/js/main.d5101d31.js",
     "static/js/787.cfb77f80.chunk.js": "/static/js/787.cfb77f80.chunk.js",
+    "static/media/memegames1.webp": "/static/media/memegames1.f4b84fe664c252bc084f.webp",
+    "static/media/memegames7.webp": "/static/media/memegames7.8d9b2babec93c297283b.webp",
+    "static/media/memegames6.webp": "/static/media/memegames6.e1aa2cf9c2acb6361942.webp",
+    "static/media/memegames4.webp": "/static/media/memegames4.ee0c64e0fbe0ecda7389.webp",
     "static/media/bspoke2.webp": "/static/media/bspoke2.d8fab0d7468ccabaea00.webp",
+    "static/media/memegames3.webp": "/static/media/memegames3.b00ba60b157b1eb604c0.webp",
+    "static/media/memegames5.webp": "/static/media/memegames5.f40183e3aea994357ef0.webp",
+    "static/media/memegames2.webp": "/static/media/memegames2.db36f1c7f9eb97fe0616.webp",
     "static/media/mtp3.webp": "/static/media/mtp3.bff3d29d2731da8de071.webp",
     "static/media/bspoke1.webp": "/static/media/bspoke1.ccd886cf50d2bc39710c.webp",
     "static/media/beauty1.webp": "/static/media/beauty1.61245dca78d08a4d2f2a.webp",
@@ -80,6 +87,7 @@
     "static/media/gmail.svg": "/static/media/gmail.dc650ba38f7532909358dc1c40948574.svg",
     "static/media/vba.webp": "/static/media/vba.f222c91940358d6e6fa7.webp",
     "static/media/excel.webp": "/static/media/excel.311d3d3cd173cabbc3ef.webp",
+    "static/media/sol.webp": "/static/media/sol.e025e419e37081af221b.webp",
     "static/media/azure.webp": "/static/media/azure.abbabcf2cd4af25151fd.webp",
     "static/media/ps.webp": "/static/media/ps.9da63777309635877a2f.webp",
     "static/media/node.webp": "/static/media/node.91ff8bba59c8c3c2129b.webp",
@@ -88,6 +96,7 @@
     "static/media/aws.webp": "/static/media/aws.b04892fd691e7fa79575.webp",
     "static/media/mysql.webp": "/static/media/mysql.ebe2a9efb3c47395dff7.webp",
     "static/media/python.webp": "/static/media/python.dd93a8e37913e3f0b8a8.webp",
+    "static/media/redis.webp": "/static/media/redis.548c9e5b5f0f8692407d.webp",
     "static/media/css.webp": "/static/media/css.6dfcbf3e54adc71087f5.webp",
     "static/media/csharp.webp": "/static/media/csharp.75e3770703d4780419ab.webp",
     "static/media/mongodb.webp": "/static/media/mongodb.b90a577ae50352f63cb8.webp",
@@ -99,6 +108,7 @@
     "static/media/visio.svg": "/static/media/visio.aa84edf9a439af7c2dffae424a304d3c.svg",
     "static/media/html.webp": "/static/media/html.c2d2cd073656ac803b04.webp",
     "static/media/git.webp": "/static/media/git.b59586c861baade62d12.webp",
+    "static/media/eth.webp": "/static/media/eth.dc3d61753535b331f5eb.webp",
     "static/media/project.webp": "/static/media/project.a7cbf85b55d4636f1e56.webp",
     "static/media/list.svg": "/static/media/list.7876b4216643b4a5eef684196a3c2da0.svg",
     "static/media/ef.webp": "/static/media/ef.6ac1d99fd050393adde0.webp",
@@ -120,11 +130,11 @@
     "static/media/linkedin.svg": "/static/media/linkedin.e28525dbd68afd61531fb3f568db92fb.svg",
     "static/media/x.svg": "/static/media/x.0535fd93c3a85052d46f1ce24c4a6ae3.svg",
     "main.281bbf6f.css.map": "/static/css/main.281bbf6f.css.map",
-    "main.7864e801.js.map": "/static/js/main.7864e801.js.map",
+    "main.d5101d31.js.map": "/static/js/main.d5101d31.js.map",
     "787.cfb77f80.chunk.js.map": "/static/js/787.cfb77f80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.281bbf6f.css",
-    "static/js/main.7864e801.js"
+    "static/js/main.d5101d31.js"
   ]
 }
