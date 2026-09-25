@@ -13,17 +13,17 @@ const ProfileCard = ({ profile }: ProfileCardProps): React.ReactElement => {
       <h3 className="profile-title">{profile.title}</h3>
       <div className="profile-content">
         {
-          profile.goals.map((goal, idx) => (
-            <div className="goal" key={idx}>
+          profile.goals.map((goal) => (
+            <div className="goal" key={`${profile.title}-${goal.title ?? 'list'}`}>
               {goal.title?.length && <h4 className="goal-title">{goal.title}</h4>}
               
                 {goal.title?.length ?
                   (<div className="goal-descriptions">
-                    {goal.descriptions.map((description, idx) => <p dangerouslySetInnerHTML={{ __html: description }} key={idx}></p>)}
+                    {goal.descriptions.map((description) => <p dangerouslySetInnerHTML={{ __html: description }} key={description}></p>)}
                   </div>) 
                   :
                   (<ul className="goal-descriptions">
-                      {goal.descriptions.map((description, idx) => <li key={idx}>{description}</li>)}
+                      {goal.descriptions.map((description) => <li key={description}>{description}</li>)}
                   </ul>)
                 }
             </div>

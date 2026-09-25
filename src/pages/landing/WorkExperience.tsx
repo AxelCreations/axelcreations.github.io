@@ -9,12 +9,10 @@ const WorkExperience = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!!sectionRef) {
-      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+    if (!sectionRef.current) return;
 
-      ImageObserver({ sectionElement: sectionElement });
-    }
-  }, [sectionRef]);
+    return ImageObserver({ sectionElement: sectionRef.current });
+  }, []);
   
   return (
     <section className='bg-secondary' ref={sectionRef} id="experience-section">

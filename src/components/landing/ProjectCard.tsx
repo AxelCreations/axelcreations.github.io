@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
 import ProjectModel from "../../lib/models/ProjectModel";
 import styled from 'styled-components';
 import Button from "../global/Button";
@@ -12,10 +11,10 @@ import Img from '../global/Img';
 type ProjectCardProps = {
   project: ProjectModel;
   carouselId: number;
-  changeSelectedProject: Dispatch<SetStateAction<ProjectModel | null>>;
+  onSelectProject: (project: ProjectModel) => void;
 }
 
-const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCardProps) => {
+const ProjectCard = ({ project, carouselId, onSelectProject }: ProjectCardProps) => {
   return (
     <Wrapper className='project'>
       <div className="project-header">
@@ -24,7 +23,7 @@ const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCard
         </div>
         <div className="project-header-images" id={`project-carousel-${carouselId}`}>
           {project.images.map((img, index) =>
-            <div className="image" key={index}>
+            <div className="image" key={img}>
               <Img src={img} text={`${project.title} (${index})`} height={40} />
             </div>)}
         </div>
@@ -44,7 +43,7 @@ const ProjectCard = ({ project, carouselId, changeSelectedProject }: ProjectCard
         <div className="project-content-company">{project.company}</div>
         <p className="project-content-excerpt">{project.excerpt}</p>
         <div className="project-content-links">
-          <Button onClick={() => { changeSelectedProject(project) }}><span>Show details...</span></Button>
+          <Button onClick={() => { onSelectProject(project) }}><span>Show details...</span></Button>
           <div className="row">
             {project.link?.length &&
               <a href={project.link} title={`${project.title} site`} target="_blank" rel="noreferrer">

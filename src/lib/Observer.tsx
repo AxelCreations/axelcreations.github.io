@@ -4,7 +4,7 @@ interface ImageObserverProps {
   action?: () => void;
 }
 
-export const ImageObserver = ({ sectionElement, stopObserver = true, action = () => {} }: ImageObserverProps): void => {
+export const ImageObserver = ({ sectionElement, stopObserver = true, action = () => {} }: ImageObserverProps): (() => void) => {
   const observerOptions = {
     threshold: 0.1
   }
@@ -19,10 +19,13 @@ export const ImageObserver = ({ sectionElement, stopObserver = true, action = ()
 
       if (stopObserver) {
         observer.disconnect();
-        observer.unobserve(sectionElement);
       }
     }
   }, observerOptions);
 
   observer.observe(sectionElement);
+
+  return () => {
+    observer.disconnect();
+  };
 }

@@ -10,12 +10,10 @@ const Skills = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!!sectionRef) {
-      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+    if (!sectionRef.current) return;
 
-      ImageObserver({ sectionElement: sectionElement });
-    }
-  }, [sectionRef]);
+    return ImageObserver({ sectionElement: sectionRef.current });
+  }, []);
 
   return (
     <section className='bg-secondary' ref={sectionRef} id="skills-section">
@@ -25,13 +23,13 @@ const Skills = () => {
 
         <Wrapper>
           {
-            SkillsData.map((skillData, idx) => (
-              <div className="skills" key={idx}>
+            SkillsData.map((skillData) => (
+              <div className="skills" key={skillData.category}>
                 <div className="skills-title">
                   <h3>{skillData.category}</h3>
                 </div>
                 <div className="skills-content">
-                  {skillData.skills.map((skill, idx) => <SkillCard skill={skill} key={idx} />)}
+                  {skillData.skills.map((skill) => <SkillCard skill={skill} key={skill.title} />)}
                 </div>
               </div>
             ))

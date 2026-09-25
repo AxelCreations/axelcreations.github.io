@@ -10,12 +10,10 @@ const Profile = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!!sectionRef) {
-      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
+    if (!sectionRef.current) return;
 
-      ImageObserver({ sectionElement: sectionElement });
-    }
-  }, [sectionRef]);
+    return ImageObserver({ sectionElement: sectionRef.current });
+  }, []);
 
   return (
     <section ref={sectionRef} id="profile-section">
@@ -25,7 +23,7 @@ const Profile = () => {
 
         <Wrapper>
           {
-            ProfileData.map((profile, idx) => <ProfileCard profile={profile} key={idx} />)
+            ProfileData.map((profile) => <ProfileCard profile={profile} key={profile.title} />)
           }
         </Wrapper>
       </StyledContainer>

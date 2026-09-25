@@ -1,15 +1,14 @@
 import ExperienceModel from '../../lib/models/ExperienceModel';
 import styled from 'styled-components';
 import Button from '../global/Button';
-import { Dispatch, SetStateAction } from 'react';
 import Img from '../global/Img';
 
 type JobCardProps = {
   experience: ExperienceModel;
-  changeSelectedExperience: Dispatch<SetStateAction<ExperienceModel | null>>;
+  onSelectExperience: (experience: ExperienceModel) => void;
 }
 
-const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): React.ReactElement => {
+const JobCard = ({ experience, onSelectExperience }: JobCardProps): React.ReactElement => {
 
   return (
     <StyledJob className="job">
@@ -17,7 +16,7 @@ const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): React.
         <h3 className="job-content-title">{experience.title}</h3>
         <h4 className="job-content-company">{experience.company}</h4>
         <p className="job-content-details">{experience.excerpt}</p>
-        <StyledButton onClick={() => {changeSelectedExperience(experience)}}>
+        <StyledButton onClick={() => {onSelectExperience(experience)}}>
           <span>Show more...</span>
         </StyledButton>
       </div>

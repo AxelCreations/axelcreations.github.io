@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import styled from 'styled-components';
@@ -6,55 +6,66 @@ import ProjectModel from '../lib/models/ProjectModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
 import Img from './global/Img';
+import { useBodyScrollLock } from '../lib/useBodyScrollLock';
 
 type ProjectModalProps = {
   selectedProject: ProjectModel | null;
-  changeSelectedProject: Dispatch<SetStateAction<ProjectModel | null>>;
+  onClose: () => void;
 }
 
-const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalProps) => {
+const ProjectModal = ({ selectedProject, onClose }: ProjectModalProps) => {
   const [selectedImage, setSelectedImage] = useState<string>(selectedProject?.images[0] ?? '');
+
+  useBodyScrollLock(Boolean(selectedProject));
 
   useEffect(() => {
     setSelectedImage(selectedProject?.images[0] ?? '');
-    if (!!selectedProject) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
   }, [selectedProject]);
+
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, selectedProject]);
 
   return (
     <>
-      {createPortal(
-        <Modal className={(!!selectedProject) ? 'show' : ''}>
-          <div className="modal">
+      {selectedProject && createPortal(
+        <Modal role="presentation" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) onClose();
+        }}>
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
             <div className="modal-close">
-              <Button onClick={() => {
-                changeSelectedProject(null);
-              }}>
+              <Button type="button" aria-label="Close project details" onClick={onClose}>
                 <Img src={closeIcon} text={`close-button`} height={40} showPlaceholder={false} />
               </Button>
             </div>
             <div className="modal-body">
               <div className="modal-body-info">
-                <h4>{selectedProject?.title}</h4>
+                <h4 id="project-modal-title">{selectedProject.title}</h4>
                 <div className="modal-body-info-meta">
-                  <span>{selectedProject?.company}</span>
-                  <span>{selectedProject?.date}</span>
+                  <span>{selectedProject.company}</span>
+                  <span>{selectedProject.date}</span>
                 </div>
-                <p>{selectedProject?.description}</p>
+                <p>{selectedProject.description}</p>
               </div>
               <div className="modal-body-gallery">
-                <picture>
-                  <img src={selectedImage} alt={`selected preview`} height={100} />
-                </picture>
+                {selectedImage && (
+                  <picture>
+                    <img src={selectedImage} alt={`selected preview`} height={100} />
+                  </picture>
+                )}
                 <ul className="modal-body-gallery-options">
-                  {selectedProject?.images.map((image, idx) => (
+                  {selectedProject.images.map((image) => (
                     <li className={(selectedImage === image ? 'current' : '')}
                       onClick={() => { setSelectedImage(image) }}
-                      key={idx}>
-                      <Img src={image} text={`option ${idx}`} height={100} showPlaceholder={false} />
+                      key={image}>
+                      <Img src={image} text={`project preview option`} height={100} showPlaceholder={false} />
                     </li>
                   ))}
                 </ul>
@@ -63,8 +74,8 @@ const ProjectModal = ({ selectedProject, changeSelectedProject }: ProjectModalPr
             <div className="modal-footer">
               <h5>Created With</h5>
               <div className="project-skills">
-                {selectedProject?.skills?.map((skill, index) => (
-                  <div key={index} className='skill-icon'>
+                {selectedProject.skills?.map((skill) => (
+                  <div key={skill.title} className='skill-icon'>
                     <Img src={skill.icon} text={skill.title} height={50} showPlaceholder={false} />
                   </div>
                 ))}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import JobCard from './landing/JobCard';
 import ExperienceData from '../lib/data/Experience';
@@ -13,20 +13,12 @@ import Img from './global/Img';
 const WorkTimeline = (): React.ReactElement => {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceModel|null>(null);
 
-  useEffect(() => {
-    if ( !!selectedExperience ) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-  }, [selectedExperience]);
-
   return (
     <Wrapper>
       <StyledTimeline id="timeline-container">
         {
-          ExperienceData.map((experience, index) =>
-            <JobCard experience={experience} key={index} changeSelectedExperience={setSelectedExperience} />
+          ExperienceData.map((experience) =>
+            <JobCard experience={experience} key={`${experience.company}-${experience.initialDate}`} onSelectExperience={(selected) => setSelectedExperience(selected)} />
           )
         }
       </StyledTimeline>
@@ -41,7 +33,7 @@ const WorkTimeline = (): React.ReactElement => {
         </StyledButton>
       </StyledControlsContainer>
 
-      <ExperienceModal selectedExperience={selectedExperience} changeSelectedExperience={setSelectedExperience} />
+      <ExperienceModal selectedExperience={selectedExperience} onClose={() => setSelectedExperience(null)} />
     </Wrapper>
   )
 }

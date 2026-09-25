@@ -14,20 +14,10 @@ const MyWork = (): React.ReactElement => {
   const [selectedProject, setSelectedProject] = useState<ProjectModel|null>(null);
 
   useEffect(() => {
-    if ( !!selectedProject ) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-  }, [selectedProject]);
+    if (!sectionRef.current) return;
 
-  useEffect(() => {
-    if (!!sectionRef) {
-      const sectionElement: HTMLElement = sectionRef.current as HTMLElement;
-
-      ImageObserver({ sectionElement: sectionElement });
-    }
-  }, [sectionRef]);
+    return ImageObserver({ sectionElement: sectionRef.current });
+  }, []);
 
   return (
     <section ref={sectionRef} id="my-work-section">
@@ -38,12 +28,12 @@ const MyWork = (): React.ReactElement => {
         <Wrapper>
           {
             ProjectsData
-              .map((project, idx) => <ProjectCard project={project} carouselId={idx} key={idx} changeSelectedProject={setSelectedProject} />)
+              .map((project, idx) => <ProjectCard project={project} carouselId={idx} key={`${project.title}-${project.date}`} onSelectProject={(selected) => setSelectedProject(selected)} />)
               .reverse()
           }
         </Wrapper>
       </StyledContainer>
-      <ProjectModal selectedProject={selectedProject} changeSelectedProject={setSelectedProject} />
+      <ProjectModal selectedProject={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   )
 }

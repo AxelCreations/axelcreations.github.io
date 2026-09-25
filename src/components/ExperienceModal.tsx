@@ -1,29 +1,45 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import ExperienceModel from '../lib/models/ExperienceModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
 import Img from './global/Img';
+import { useBodyScrollLock } from '../lib/useBodyScrollLock';
 
 type ExperienceModalProps = {
   selectedExperience: ExperienceModel | null;
-  changeSelectedExperience: Dispatch<SetStateAction<ExperienceModel | null>>;
+  onClose: () => void;
 }
 
-const ExperienceModal = ({ selectedExperience, changeSelectedExperience }: ExperienceModalProps) => {
+const ExperienceModal = ({ selectedExperience, onClose }: ExperienceModalProps) => {
+  useBodyScrollLock(Boolean(selectedExperience));
+
+  useEffect(() => {
+    if (!selectedExperience) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose, selectedExperience]);
+
   return (
     <>
       { selectedExperience && createPortal(
-        <Modal>
-          <div className="modal">
+        <Modal role="presentation" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) onClose();
+        }}>
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="experience-modal-title">
             <div className="modal-close">
-              <Button onClick={() => {changeSelectedExperience(null)}}>
+              <Button type="button" aria-label="Close experience details" onClick={onClose}>
                 <Img src={closeIcon} text={'close-button'} height={40} showPlaceholder={false} />
               </Button>
             </div>
             <div className="modal-title">
-              <h4>{selectedExperience.title}</h4>
+              <h4 id="experience-modal-title">{selectedExperience.title}</h4>
               <h5>{selectedExperience.company}</h5>
             </div>
             <div className="modal-content">
