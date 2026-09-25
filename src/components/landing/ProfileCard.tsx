@@ -6,7 +6,7 @@ type ProfileCardProps = {
   profile: ProfileModel;
 }
 
-const ProfileCard = ({ profile }: ProfileCardProps): JSX.Element => {
+const ProfileCard = ({ profile }: ProfileCardProps): React.ReactElement => {
   
   return (
     <StyledProfile className='profile'>

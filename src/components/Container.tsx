@@ -7,7 +7,7 @@ type TContainerProps = {
 	className?: string;
 };
 
-const Container = ({ type = ContainerType.Box, children, className='flex' }: TContainerProps): JSX.Element => {
+const Container = ({ type = ContainerType.Box, children, className='flex' }: TContainerProps): React.ReactElement => {
 	return (
 		<Wrapper className={type + ' ' + className}>
 			{children}

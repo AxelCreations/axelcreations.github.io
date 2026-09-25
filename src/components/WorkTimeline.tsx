@@ -10,7 +10,7 @@ import ExperienceModal from './ExperienceModal';
 import ExperienceModel from '../lib/models/ExperienceModel';
 import Img from './global/Img';
 
-const WorkTimeline = (): JSX.Element => {
+const WorkTimeline = (): React.ReactElement => {
   const [selectedExperience, setSelectedExperience] = useState<ExperienceModel|null>(null);
 
   useEffect(() => {

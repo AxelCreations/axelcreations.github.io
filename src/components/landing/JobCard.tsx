@@ -9,7 +9,7 @@ type JobCardProps = {
   changeSelectedExperience: Dispatch<SetStateAction<ExperienceModel | null>>;
 }
 
-const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): JSX.Element => {
+const JobCard = ({ experience, changeSelectedExperience }: JobCardProps): React.ReactElement => {
 
   return (
     <StyledJob className="job">

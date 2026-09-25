@@ -9,7 +9,7 @@ import ProjectModal from '../../components/ProjectModal';
 
 import { ImageObserver } from '../../lib/Observer';
 
-const MyWork = (): JSX.Element => {
+const MyWork = (): React.ReactElement => {
   const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<ProjectModel|null>(null);
 

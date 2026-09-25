@@ -2,7 +2,7 @@ import { ComponentProps } from "react";
 import styled from "styled-components";
 
 type ButtonProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
   className?: string;
   onClick?: any;
 } & ComponentProps<"button">

@@ -7,22 +7,23 @@ import Hero from './pages/landing/Hero';
 import Profile from './pages/landing/Profile';
 import Skills from './pages/landing/Skills';
 import MyWork from './pages/landing/MyWork';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const App = () => {
-  const [hash, setHash] = useState('');
+  useEffect(() => {
+    document.title = 'Reynel Axel Perdomo - FullStack Developer';
+    let timeoutId: number | undefined;
 
-  document.title = 'Reynel Axel Perdomo - FullStack Developer';
-
-  useLayoutEffect(() => {
     const handleHashChange = () => {
-      setHash(window.location.hash);
+      const hash = window.location.hash;
+      const elementId = decodeURIComponent(hash.slice(1));
 
-      if (hash.length > 0) {
-        const element = document.querySelector(hash);
+      if (elementId.length > 0) {
+        const element = document.getElementById(elementId);
 
         if (element) {
-          setTimeout(() => {
+          window.clearTimeout(timeoutId);
+          timeoutId = window.setTimeout(() => {
             element.scrollIntoView({ behavior: 'smooth' });
           }, 800);
         }
@@ -35,8 +36,9 @@ const App = () => {
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
-    }
-  }, [hash])
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <div className="App">
