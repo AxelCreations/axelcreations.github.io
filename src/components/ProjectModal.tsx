@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ProjectModel from '../lib/models/ProjectModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
@@ -20,6 +20,21 @@ const ProjectModal = ({ selectedProject, onClose }: ProjectModalProps) => {
 
   useEffect(() => {
     setSelectedImage(selectedProject?.images[0] ?? '');
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (!selectedProject || selectedProject.images.length < 2) return;
+
+    const intervalId = window.setInterval(() => {
+      setSelectedImage((currentImage) => {
+        const currentIndex = selectedProject.images.indexOf(currentImage);
+        const nextIndex = (currentIndex + 1) % selectedProject.images.length;
+
+        return selectedProject.images[nextIndex];
+      });
+    }, 4000);
+
+    return () => window.clearInterval(intervalId);
   }, [selectedProject]);
 
   useEffect(() => {
@@ -57,7 +72,7 @@ const ProjectModal = ({ selectedProject, onClose }: ProjectModalProps) => {
               <div className="modal-body-gallery">
                 {selectedImage && (
                   <picture>
-                    <img src={selectedImage} alt={`selected preview`} height={100} />
+                    <img key={selectedImage} className="preview-image" src={selectedImage} alt={`selected preview`} height={100} />
                   </picture>
                 )}
                 <ul className="modal-body-gallery-options">
@@ -91,6 +106,21 @@ const ProjectModal = ({ selectedProject, onClose }: ProjectModalProps) => {
 
 export default ProjectModal;
 
+const modalBackdropIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const modalContentIn = keyframes`
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+`;
+
+const previewImageIn = keyframes`
+  from { opacity: 0; transform: scale(1.025); }
+  to { opacity: 1; transform: scale(1); }
+`;
+
 const Modal = styled.div`
   align-items: center;
   backdrop-filter: blur(5px);
@@ -107,39 +137,34 @@ const Modal = styled.div`
 
   &.show {
     display: flex;
+    animation: ${modalBackdropIn} 250ms ease both;
   }
 
   .modal {
-    background-color: var(--bg-secondary-80);
-    border-radius: 0.5rem;
-    border: 1px solid var(--bg-main-50);
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
-    max-height: 85vh;
-    max-width: 1440px;
+    background: linear-gradient(145deg, rgba(49, 54, 64, 0.98), rgba(32, 36, 44, 0.98));
+    border: 1px solid rgba(178, 178, 178, 0.2);
+    border-radius: 18px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+    max-height: 88vh;
+    max-width: 1180px;
     overflow-y: auto;
-    padding: 6rem 4rem 4rem;
+    padding: 4rem 2.75rem 2rem;
     position: relative;
     width: 100%;
+    animation: ${modalContentIn} 300ms ease both;
 
     &::before {
+      background: linear-gradient(90deg, var(--color-white-smoke), transparent);
       content: '';
-      background: var(--bg-secondary-80);
-      border-radius: 0.5rem;
-      display: block;
-      height: 100%;
+      height: 2px;
+      left: 2.75rem;
       position: absolute;
-      right: 0;
       top: 0;
-      width: 100%;
-      z-index: -1;
-
-      @media screen and (max-width: 992px) {
-        position: fixed;
-      }
+      width: 34%;
     }
 
     @media screen and (max-width: 768px) {
-      padding: 2rem 2rem;
+        padding: 3.5rem 1.25rem 1.5rem;
     }
 
     @media screen and (max-width: 578px) {
@@ -158,54 +183,76 @@ const Modal = styled.div`
 
     &-close {
       position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
+      right: 1rem;
+      top: 1rem;
+      z-index: 5;
+
+      button {
+        align-items: center;
+        background: transparent;
+        border: 0;
+        border-radius: 50%;
+        display: flex;
+        height: 38px;
+        justify-content: center;
+        padding: 0;
+        transition: opacity 250ms ease, transform 250ms ease;
+        width: 38px;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+          opacity: 0.7;
+          transform: rotate(8deg);
+        }
+      }
       
       @media screen and (max-width: 768px) {
-        top: 0.8rem;
-        right: 0.8rem;
+        right: 0.5rem;
+        top: 0.5rem;
 
         img {
           height: 28px;
+            width: 28px;
         }
       }
     }
 
     &-body {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
       
       @media screen and (max-width: 1200px) {
-        flex-direction: column;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
       }
       
       @media screen and (max-width: 992px) {
+        grid-template-columns: 1fr;
         margin-bottom: 1.5rem;
         gap: 1rem;
       }
 
       &-info, &-gallery {
-        width: 50%;
-      
-        @media screen and (max-width: 1200px) {
-          width: 100%;
-        }
+        min-width: 0;
+        width: auto;
       }
 
       &-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 2rem 2rem;
+        padding: 1rem 0 1.5rem;
 
         @media screen and (max-width: 768px) {
           padding: 0;
         }
         
         h4 {
-          font-size: 2.5rem;
-          margin-bottom: 1.25rem;
+          font-size: clamp(2rem, 4vw, 3.25rem);
+          line-height: 1;
+          margin-bottom: 1.5rem;
       
           @media screen and (max-width: 768px) {
             font-size: 1.5rem;
@@ -226,9 +273,10 @@ const Modal = styled.div`
         &-meta {
           display: flex;
           justify-content: space-between;
-          padding: 1.25rem 0;
-          border-top: 1px solid var(--bg-main);
-          margin-bottom: 1rem;
+          border-bottom: 1px solid rgba(178, 178, 178, 0.18);
+          border-top: 1px solid rgba(178, 178, 178, 0.18);
+          margin-bottom: 1.25rem;
+          padding: 0.9rem 0;
       
           @media screen and (max-width: 768px) {
             padding-bottom: 0.25rem;
@@ -249,8 +297,12 @@ const Modal = styled.div`
         position: relative;
 
         picture {
+          background: var(--bg-secondary);
+          border: 1px solid rgba(178, 178, 178, 0.14);
+          border-radius: 12px;
           display: block;
-          height: 350px;
+          height: 360px;
+          overflow: hidden;
       
           @media screen and (max-width: 768px) {
             height: 250px;
@@ -264,29 +316,42 @@ const Modal = styled.div`
             object-fit: contain;
             object-position: center;
             height: 100%;
+            transition: opacity 250ms ease, transform 500ms ease;
             width: 100%;
+
+            &.preview-image {
+              animation: ${previewImageIn} 450ms ease both;
+            }
           }
         }
         
         &-options {
           display: flex;
-          justify-content: space-around;
+          justify-content: center;
           list-style: none;
           flex-wrap: wrap;
-          padding: 0.75rem 0;
-          gap: 0.75rem 0;
+          padding: 0.75rem 0 0;
+          gap: 0.5rem;
           margin: 0;
 
           li {
             cursor: pointer;
             overflow: hidden;
-            height: 50px;
-            width: 80px;
-            border-radius: 8px;
-            border: 4px solid var(--color-black);
+            flex: 0 0 74px;
+            height: 54px;
+            width: 74px;
+            border-radius: 7px;
+            border: 2px solid transparent;
+            transition: border-color 250ms ease, transform 250ms ease;
+
+            @media screen and (max-width: 578px) {
+              flex-basis: 64px;
+              width: 64px;
+            }
 
             &.current {
-              border-color: white;
+              border-color: var(--color-white);
+              transform: translateY(-3px);
 
               img {
                 transform: scale(1.3);
@@ -313,10 +378,11 @@ const Modal = styled.div`
       
       h5 {
         display: inline-block;
-        font-size: 1.5rem;
-        letter-spacing: 0.125rem;
+        color: var(--color-white-smoke);
+        font-size: 0.85rem;
+        letter-spacing: 0.2rem;
         line-height: 100%;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0;
         position: relative;
         text-transform: uppercase;
         z-index: 0;
@@ -325,14 +391,24 @@ const Modal = styled.div`
       .project-skills {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: space-around;
-        min-height: 100px;
-        padding-top: 2rem;
+        gap: 0.6rem;
+        justify-content: flex-start;
+        min-height: 0;
+        padding-top: 1rem;
         
         .skill-icon {
-          height: 50px;
-          width: 100px;
+          background: rgba(178, 178, 178, 0.06);
+          border: 1px solid rgba(178, 178, 178, 0.16);
+          border-radius: 8px;
+          height: 54px;
+          padding: 0.5rem;
+          transition: border-color 250ms ease, transform 250ms ease;
+          width: 74px;
+
+          &:hover {
+            border-color: rgba(178, 178, 178, 0.48);
+            transform: translateY(-3px);
+          }
 
           img {
             object-fit: contain;
@@ -340,9 +416,15 @@ const Modal = styled.div`
             height: 100%;
             width: 100%;
           }
+
+          @media screen and (max-width: 578px) {
+            height: 48px;
+            width: 64px;
+          }
         }
       }
     }
   }
 `;
+
 

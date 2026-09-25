@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ExperienceModel from '../lib/models/ExperienceModel';
 import Button from './global/Button';
 import closeIcon from '../img/close.svg';
@@ -60,6 +60,16 @@ const ExperienceModal = ({ selectedExperience, onClose }: ExperienceModalProps) 
 
 export default ExperienceModal;
 
+const experienceBackdropIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+const experienceContentIn = keyframes`
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+`;
+
 const Modal = styled.div`
   align-items: center;
   backdrop-filter: blur(5px);
@@ -73,6 +83,7 @@ const Modal = styled.div`
   top: 0;
   width: 100vw;
   z-index: 999;
+  animation: ${experienceBackdropIn} 250ms ease both;
 
   .modal {
     background-color: var(--bg-secondary-80);
@@ -84,6 +95,7 @@ const Modal = styled.div`
     position: relative;
     width: 100%;
     z-index: 1;
+    animation: ${experienceContentIn} 300ms ease both;
 
     &::before {
       content: '';
@@ -174,4 +186,5 @@ const Modal = styled.div`
     }
   }
 `;
+
 

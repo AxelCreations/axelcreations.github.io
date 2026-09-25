@@ -66,10 +66,33 @@ const ProjectCard = ({ project, carouselId, onSelectProject }: ProjectCardProps)
 export default ProjectCard;
 
 const Wrapper = styled.div`
+  background: var(--bg-secondary);
+  border: 1px solid rgba(178, 178, 178, 0.18);
+  border-radius: 16px;
   display: grid;
   grid-template-rows: auto 1fr;
-  border: 5px solid var(--bg-secondary);
-  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(0);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, border-color 350ms ease;
+
+  &:hover {
+    border-color: rgba(178, 178, 178, 0.42);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+    transform: translateY(-8px);
+
+    .project-header-images .image img {
+      transform: scale(1.035);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
   
   @media screen and (max-width: 768px) {
     max-width: 450px;
@@ -79,22 +102,36 @@ const Wrapper = styled.div`
   .project {
     &-header {
       align-items: center;
+      background: var(--bg-main);
       display: flex;
-      height: 200px;
+      height: 220px;
       justify-content: center;
+      overflow: hidden;
       position: relative;
 
+      &::after {
+        background: linear-gradient(180deg, rgba(32, 36, 44, 0.05), rgba(32, 36, 44, 0.48));
+        content: '';
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+      }
+
       &-tag {
-        background: var(--bg-secondary);
-        border-radius: 0 24px 24px 0;
-        left: 0;
-        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        background: rgba(32, 36, 44, 0.9);
+        border: 1px solid rgba(178, 178, 178, 0.24);
+        border-radius: 999px;
+        left: 1rem;
+        padding: 0.45rem 0.8rem;
         position: absolute;
         top: 1rem;
+        z-index: 2;
 
         span {
-          font-size: 0.9rem;
-          letter-spacing: 0.08rem;
+          color: var(--color-white-smoke);
+          font-size: 0.72rem;
+          letter-spacing: 0.1rem;
           font-weight: 700;
           text-transform: uppercase;
         }
@@ -111,6 +148,7 @@ const Wrapper = styled.div`
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
         width: 100%;
+        z-index: 0;
 
         &::-webkit-scrollbar {
           display: none;
@@ -134,6 +172,7 @@ const Wrapper = styled.div`
             max-height: 100%;
             max-width: 100%;
             height: 100%;
+            transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
             width: 100%;
           }
         }
@@ -141,27 +180,31 @@ const Wrapper = styled.div`
         &-controls {
           position: absolute;
           display: flex;
-          bottom: -0.5rem;
+          bottom: 0.9rem;
           gap: 1rem;
+          z-index: 2;
 
           button {
+            align-items: center;
+            backdrop-filter: blur(8px);
+            background: rgba(32, 36, 44, 0.82);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 50%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            background: var(--bg-secondary);
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
+            height: 36px;
             padding: 0;
-            transition: transform 0.5s ease;
+            transition: background-color 250ms ease, transform 250ms ease;
+            width: 36px;
             
             &:hover {
+              background: var(--bg-main);
               transform: scale(1.1);
             }
 
             img {
-              height: 35px;
-              width: 35px;
+              height: 28px;
+              width: 28px;
             }
 
           }
@@ -171,19 +214,26 @@ const Wrapper = styled.div`
 
     &-content {
       background: var(--bg-secondary);
-      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+      padding: 1.35rem 1.4rem 1.25rem;
       text-align: left;
 
       &-title {
         font-weight: 700;
-        font-size: 1.3rem;
+        font-size: 1.45rem;
         line-height: 120%;
       }
 
       &-company {
         font-weight: 300;
-        font-size: 1rem;
-        letter-spacing: 0.1rem;
+        color: var(--color-white-smoke);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14rem;
+        margin-top: 0.35rem;
+        text-transform: uppercase;
       }
 
       &-links {
@@ -191,22 +241,26 @@ const Wrapper = styled.div`
         align-items: center;
         gap: 1rem;
         justify-content: space-between;
+        margin-top: auto;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(178, 178, 178, 0.14);
 
         a {
-          border: 1px solid white;
+          border: 1px solid rgba(255, 255, 255, 0.7);
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 50%;
           background: white;
-          height: 30px;
-          width: 30px;
+          height: 34px;
+          width: 34px;
           opacity: 0.8;
-          transition: transform 0.5s ease;
+          transition: transform 300ms ease, background-color 300ms ease;
 
           &:hover {
             opacity: 1;
             transform: scale(1.05);
+            background: var(--color-white-smoke);
 
             img {
               transform: rotate(15deg);
@@ -225,19 +279,28 @@ const Wrapper = styled.div`
       }
 
       p {
-        font-size: 1rem;
-        line-height: 125%;
-        margin: 1rem 0;
+        color: var(--color-white-smoke);
+        font-size: 0.98rem;
+        line-height: 145%;
+        margin: 1.25rem 0;
       }
 
       button {
         background: var(--bg-main);
+        border: 1px solid rgba(178, 178, 178, 0.24);
         font-size: 1rem;
-        border-radius: 10px;
-        padding: 0.5rem 2rem;
+        border-radius: 8px;
+        padding: 0.65rem 1.1rem;
         color: white;
         font-weight: 800;
         display: block;
+        transition: background-color 250ms ease, transform 250ms ease;
+
+        &:hover {
+          background: var(--color-white-smoke);
+          color: var(--bg-secondary);
+          transform: translateY(-2px);
+        }
       }
     }
   }

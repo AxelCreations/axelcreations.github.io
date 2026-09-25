@@ -50,6 +50,7 @@ const ProfileData: ProfileModel[] = [
           'Work under pressure or stress',
           'Punctuality and Responsibility',
           'Proactivity',
+          'Adaptability',
         ]
       }
     ],

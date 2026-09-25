@@ -5,12 +5,15 @@ interface ImageObserverProps {
 }
 
 export const ImageObserver = ({ sectionElement, stopObserver = true, action = () => {} }: ImageObserverProps): (() => void) => {
+  sectionElement.classList.add('reveal-on-scroll');
+
   const observerOptions = {
     threshold: 0.1
   }
 
   const observer = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
+      sectionElement.classList.add('is-visible');
       action();
 
       sectionElement.querySelectorAll<HTMLImageElement>('img')?.forEach(element => {

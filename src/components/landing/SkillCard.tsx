@@ -1,5 +1,5 @@
 import SkillModel, { SkillLevel } from '../../lib/models/SkillModel';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Img from '../global/Img';
 
 type SkillCardProps = {
@@ -25,14 +25,30 @@ const SkillCard = ({ skill }: SkillCardProps) => {
 
 export default SkillCard;
 
+const skillBarIn = keyframes`
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+`;
+
 const StyledSkill = styled.div`
   background-color: var(--bg-main);
   height: 70px;
   position: relative;
   width: 100px;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease, border-color 300ms ease;
 
   &:hover {
-    box-shadow: 0 0 5px 2px rgba(0,0,0,0.125);
+    border-color: var(--color-white-smoke);
+    box-shadow: 0 14px 20px rgba(0,0,0,0.22);
+    transform: translateY(-8px);
+
+    .skill-icon img {
+      transform: translateY(-4px) scale(1.12) rotate(4deg);
+    }
+
     .skill-info {
       width: 100%;
     }
@@ -42,6 +58,10 @@ const StyledSkill = styled.div`
     &-icon {
       text-align: center;
       height: 50px;
+
+      img {
+        transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
     }
 
     &-info {
@@ -52,7 +72,7 @@ const StyledSkill = styled.div`
       min-height: 20px;
       left: 0;
       width: 0;
-      transition: width 0.12s ease-out;
+      transition: width 250ms cubic-bezier(0.22, 1, 0.36, 1);
       text-align: center;
       font-size: 14px;
       line-height: 20px;
@@ -73,6 +93,11 @@ const StyledSkill = styled.div`
         top: 0;
         left: 0;
         height: 100%;
+        transform-origin: left center;
+
+        section.reveal-on-scroll.is-visible & {
+          animation: ${skillBarIn} 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
         
         &.level {
           &-1 {

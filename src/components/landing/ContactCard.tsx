@@ -8,7 +8,7 @@ type ContactProps = {
 
 const ContactCard = ({ contact }: ContactProps) => {
   return (
-    <StyledDiv href={contact.link} target="_blank" title={contact.text}>
+    <StyledDiv className="contact" href={contact.link} target="_blank" title={contact.text}>
       <div className="icon">
         <Img src={contact.icon} text={`Contact ${contact.text}`} height={32} showPlaceholder={false} />
       </div>
@@ -34,26 +34,43 @@ const StyledDiv = styled.a`
   position: relative;
   overflow: hidden;
   z-index: 0;
+  transform: translateY(0);
+  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 350ms ease, border-color 350ms ease;
 
-  &::after {
+  &::before {
     content: '';
-    background-color: var(--bg-secondary);
+    background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.16) 45%, transparent 70%);
     position: absolute;
     display: block;
     height: 100%;
-    transform-origin: left;
-    transform: scaleX(0);
-    width: 100%;
-    transition: transform 0.2s ease-out;
+    left: -120%;
+    top: 0;
+    transform: skewX(-18deg);
+    transition: left 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    width: 80%;
     z-index: -1;
   }
   
   &:hover {
-    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.125);
+    border-color: var(--color-white-smoke);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+    transform: translateY(-6px);
 
-    &::after {
+    &::before {
+      left: 130%;
+    }
+
+    .icon img {
+      transform: translateY(-3px) rotate(-6deg) scale(1.08);
+    }
+
+    .text span::after {
       transform: scaleX(1);
     }
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(0.99);
   }
   
   .icon {
@@ -73,6 +90,7 @@ const StyledDiv = styled.a`
       width: 50px;
       max-height: 50px;
       max-width: 50px;
+      transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
     
       @media screen and (max-width: 1200px) {
         height: 45px;
@@ -85,6 +103,20 @@ const StyledDiv = styled.a`
     span {
       font-size: 2rem;
       font-weight: 700;
+      position: relative;
+
+      &::after {
+        background: var(--color-white);
+        bottom: -0.2rem;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 300ms ease;
+        width: 100%;
+      }
     
       @media screen and (max-width: 1200px) {
         font-size: 1.8rem;

@@ -48,6 +48,60 @@ body.no-scroll {
   overflow: hidden;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-on-scroll.is-visible .project,
+.reveal-on-scroll.is-visible .skills,
+.reveal-on-scroll.is-visible .job {
+  animation: card-reveal 500ms ease both;
+}
+
+.reveal-on-scroll.is-visible .project:nth-child(2),
+.reveal-on-scroll.is-visible .skills:nth-child(2),
+.reveal-on-scroll.is-visible .job:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.reveal-on-scroll.is-visible .project:nth-child(3),
+.reveal-on-scroll.is-visible .skills:nth-child(3),
+.reveal-on-scroll.is-visible .job:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+@keyframes card-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal-on-scroll.is-visible .project,
+  .reveal-on-scroll.is-visible .skills,
+  .reveal-on-scroll.is-visible .job {
+    animation: none;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
   monospace;
