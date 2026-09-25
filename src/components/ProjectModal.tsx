@@ -36,7 +36,7 @@ const ProjectModal = ({ selectedProject, onClose }: ProjectModalProps) => {
   return (
     <>
       {selectedProject && createPortal(
-        <Modal role="presentation" onMouseDown={(event) => {
+        <Modal className="show" role="presentation" onMouseDown={(event) => {
           if (event.target === event.currentTarget) onClose();
         }}>
           <div className="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">

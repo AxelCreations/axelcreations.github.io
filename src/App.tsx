@@ -8,6 +8,7 @@ import Profile from './pages/landing/Profile';
 import Skills from './pages/landing/Skills';
 import MyWork from './pages/landing/MyWork';
 import { useEffect } from 'react';
+import { preloadModelContent } from './lib/preloadModelContent';
 
 const App = () => {
   useEffect(() => {
@@ -39,6 +40,8 @@ const App = () => {
       window.clearTimeout(timeoutId);
     };
   }, []);
+
+  useEffect(() => preloadModelContent(), []);
 
   return (
     <div className="App">
